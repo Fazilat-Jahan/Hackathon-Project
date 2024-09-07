@@ -1,0 +1,36 @@
+body{
+  background: beige;
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+}
+.container{
+  width: 60%;
+  margin: 0 auto;
+  background: beige;
+  padding: 20px;
+  box-shadow: 0 0 10px rgb(205, 81, 81);
+}
+
+.summary{
+  text-align: justify;
+}
+
+header{
+  text-align: center;
+}
+
+header h1{
+  font-size: 30px;
+}
+header p{
+  margin: 20px 0;
+}
+
+h2{
+  font-size: 24px;
+
+}
+
+.hidden{
+  display: none;
+}
