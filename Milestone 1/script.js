@@ -1,12 +1,3 @@
-// const toggleButton = document.getElementById("toggleSkills");
-// const skillsContent = document.getElementById("skillsContent");
-// toggleButton?.addEventListener("click", () => {
-//   if (skillsContent?.classList.contains("hidden")) {
-//     skillsContent.classList.remove("hidden");
-//   } else {
-//     skillsContent?.classList.add("hidden");
-//   }
-// });
 var toggleButton = document.getElementById("toggleSkills");
 var skillsContent = document.getElementById("skillsContent");
 toggleButton === null || toggleButton === void 0 ? void 0 : toggleButton.addEventListener("click", function () {
