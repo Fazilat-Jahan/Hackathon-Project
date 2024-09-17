@@ -1,144 +1,30 @@
-"use strict";
-const resumeForm = document.getElementById('resume');
-const nameInput = document.getElementById('name');
-const citycountryInput = document.getElementById('city-country');
-const contactInput = document.getElementById('contact-number');
-const emailInput = document.getElementById('email');
-const linkedinInput = document.getElementById('linkedin');
-const summaryInput = document.getElementById('summary');
-const workInput = document.getElementById('work-experience');
-const skillsInput = document.getElementById('skills');
-const educationInput = document.getElementById('education');
-const resumeOutput = document.getElementById('resume-output');
+var resumeForm = document.getElementById('resume');
+var nameInput = document.getElementById('name');
+var citycountryInput = document.getElementById('city-country');
+var contactInput = document.getElementById('contact-number');
+var emailInput = document.getElementById('email');
+var linkedinInput = document.getElementById('linkedin');
+var summaryInput = document.getElementById('summary');
+var workInput = document.getElementById('work-experience');
+var skillsInput = document.getElementById('skills');
+var educationInput = document.getElementById('education');
+var resumeOutput = document.getElementById('resume-output');
 resumeForm.addEventListener('submit', function (event) {
     event.preventDefault();
-    const name = nameInput.value;
-    const citycountry = citycountryInput.value;
-    const contact = contactInput.value;
-    const email = emailInput.value;
-    const linkedin = linkedinInput.value;
-    const summary = summaryInput.value;
-    const work = workInput.value;
-    const skills = skillsInput.value;
-    const education = educationInput.value;
-    const generatedResume = `
-    <html> 
-    <head>
-    <title>${name}'s Resume</title>
-    
-    <style> 
-    body{
-  background: beige;
-  font-family: 'Times New Roman', Times, serif;
-  color: black;
-}
-.container{
-  width: 60%;
-  margin: 0 auto;
-  background: beige;
-  padding: 20px;
-  box-shadow: 0 0 10px rgb(205, 81, 81);
-}
-
-.summary{
-  text-align: justify;
-}
-
-header{
-  text-align: center;
-}
-
-header h1{
-  font-size: 30px;
-}
-header p{
-  margin: 20px 0;
-}
-
-h2{
-  font-size: 24px;
-
-}
-  button {
- margin-left: 75%;
- padding: 10px;
-  background-color: rgb(205, 81, 81);
-  color: white;
-  border-radius: 6px;
-  width: 25%;
-  cursor:grab;
-
-}
-
-button:hover {
-  background-color: rgb(153, 60, 60);
-}
-   
- </style>
- </head>
- <body> 
- <div class="container">
- <header> 
-
-        <h1> ${name} </h1>
-        <strong>
-        <p> ~ ${citycountry}\t~ ${contact}\t~ ${email} </p>
-        <p> <a href="${linkedin}" target="_blank"> https://www.linkedin.com/in/${name} </a>
-        </a> </p> </strong>
-        </header>
-        <hr>
-        
-         <p>${summary}</p>
-         
-          <hr>
-          <h2>Work Experience</h2>
-          <ul>
-         
-          ${work.replace(/\n/g, '<br>')}
-       
-            </ul>
-
-            <hr>
-
-        <h2> Relevent Skills </h2>
-        <ul>
-         ${skills.replace(/\n/g, '<br>')}
-        </ul>
-        <hr>
-
-         <h2>Education</h2>
-      <ul>
-      
-      ${education.replace(/\n/g, '<br>')}
-        
-      </ul>
-       </div>
-
-
-      <button id="download-pdf">Download PDF</button>
-     
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
-      <script>
-        document.getElementById('download-pdf').addEventListener('click', function() {
-          const element = document.querySelector('.container');
-          const opt = {
-            margin:       0.5,
-            filename:     '${name} Resume.pdf',
-            image:        { type: 'jpeg', quality: 0.98 },
-            html2canvas:  { scale: 2 },
-            jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
-          };
-          html2pdf().from(element).set(opt).save();
-        });
-      </script>
-       </body>
-    </html>
-            
-`;
-    const blob = new Blob([generatedResume], { type: 'text/html' });
-    const url = URL.createObjectURL(blob);
+    var name = nameInput.value;
+    var citycountry = citycountryInput.value;
+    var contact = contactInput.value;
+    var email = emailInput.value;
+    var linkedin = linkedinInput.value;
+    var summary = summaryInput.value;
+    var work = workInput.value;
+    var skills = skillsInput.value;
+    var education = educationInput.value;
+    var generatedResume = "\n    <html> \n    <head>\n    <title>".concat(name, "'s Resume</title>\n    \n    <style> \n    body{\n  background: beige;\n  font-family: 'Times New Roman', Times, serif;\n  color: black;\n}\n.container{\n  width: 60%;\n  margin: 0 auto;\n  background: beige;\n  padding: 20px;\n  box-shadow: 0 0 10px rgb(205, 81, 81);\n}\n\n.summary{\n  text-align: justify;\n}\n\nheader{\n  text-align: center;\n}\n\nheader h1{\n  font-size: 30px;\n}\nheader p{\n  margin: 20px 0;\n}\n\nh2{\n  font-size: 24px;\n\n}\n  button {\n margin-left: 75%;\n padding: 10px;\n  background-color: rgb(205, 81, 81);\n  color: white;\n  border-radius: 6px;\n  width: 25%;\n  cursor:grab;\n\n}\n\nbutton:hover {\n  background-color: rgb(153, 60, 60);\n}\n   \n </style>\n </head>\n <body> \n <div class=\"container\">\n <header> \n\n        <h1> ").concat(name, " </h1>\n        <strong>\n        <p> ~ ").concat(citycountry, "\t~ ").concat(contact, "\t~ ").concat(email, " </p>\n        <p> <a href=\"").concat(linkedin, "\" target=\"_blank\"> https://www.linkedin.com/in/").concat(name, " </a>\n        </a> </p> </strong>\n        </header>\n        <hr>\n        \n         <p>").concat(summary, "</p>\n         \n          <hr>\n          <h2>Work Experience</h2>\n          <ul>\n         \n          ").concat(work.replace(/\n/g, '<br>'), "\n       \n            </ul>\n\n            <hr>\n\n        <h2> Relevent Skills </h2>\n        <ul>\n         ").concat(skills.replace(/\n/g, '<br>'), "\n        </ul>\n        <hr>\n\n         <h2>Education</h2>\n      <ul>\n      \n      ").concat(education.replace(/\n/g, '<br>'), "\n        \n      </ul>\n       </div>\n\n\n      <button id=\"download-pdf\">Download PDF</button>\n     \n      <script src=\"https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js\"></script>\n      <script>\n        document.getElementById('download-pdf').addEventListener('click', function() {\n          const element = document.querySelector('.container');\n          const opt = {\n            margin:       0.5,\n            filename:     '").concat(name, " Resume.pdf',\n            image:        { type: 'jpeg', quality: 0.98 },\n            html2canvas:  { scale: 2 },\n            jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }\n          };\n          html2pdf().from(element).set(opt).save();\n        });\n      </script>\n       </body>\n    </html>\n            \n");
+    var blob = new Blob([generatedResume], { type: 'text/html' });
+    var url = URL.createObjectURL(blob);
     // For open the resume in a new tab:
-    const a = document.createElement('a');
+    var a = document.createElement('a');
     a.href = url;
     a.target = '_blank';
     a.click();

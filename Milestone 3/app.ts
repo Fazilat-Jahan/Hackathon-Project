@@ -1,4 +1,3 @@
-
 const toggleButton= document.getElementById("toggleSkills");
 const skillsContent= document.getElementById("skillsContent");
 toggleButton?.addEventListener("click", () =>{

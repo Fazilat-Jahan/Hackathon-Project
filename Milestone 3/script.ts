@@ -148,6 +148,4 @@ button:hover {
   a.href = url;
   a.target = '_blank';
   a.click();
-
-
 });
