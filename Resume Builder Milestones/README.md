@@ -5,9 +5,13 @@ Resume Builder is a simple web-based application that allows users to generate a
 
 ## Features
 **Static Resume:** A pre-built static resume template is available for users to view.
+
 **Dynamic Resume Generation:** Users can generate their resume by clicking the "Generate Your Resume" button, filling out a form, and automatically generating a resume in the format of the static one.
+
 **Inline Editing:** After generating the resume, users can edit their details directly on the page to further customize their resume.
+
 **Download as PDF:** Once the resume is generated, users can download it as a PDF file.
+
 **Copy Shareable Link:** The resume can also be shared via a unique URL link based on the user's name.
 
 
@@ -28,6 +32,7 @@ A brief summary
 Work Experience
 Skills
 Education
+
 Upon submitting the form, the inputted details are used to generate a new resume in the format of the static one.
 
 
