@@ -24,7 +24,14 @@ resumeForm.addEventListener('submit', function (event: Event) {
   const skills: string = skillsInput.value;
   const education: string = educationInput.value;
 
+ // Generate a username for the URL
+ const username = name.toLowerCase().replace(/\s+/g, '-');
 
+ // Store the resume data locally (for demonstration)
+ const resumeData = {
+     name, citycountry, contact, email, linkedin, summary, work, skills, education
+ };
+ localStorage.setItem(username, JSON.stringify(resumeData));
 
   const generatedResume = `
     <html> 
@@ -65,6 +72,7 @@ h2{
 
 }
   button {
+  margin-top: 20px;
  margin-left: 75%;
  padding: 10px;
   background-color: rgb(205, 81, 81);
@@ -85,19 +93,19 @@ button:hover {
  <div class="container">
  <header> 
 
-        <h1> ${name} </h1>
+        <h1 contenteditable="true"> ${name} </h1>
         <strong>
-        <p> ~ ${citycountry}\t~ ${contact}\t~ ${email} </p>
-        <p> <a href="${linkedin}" target="_blank"> https://www.linkedin.com/in/${name} </a>
+        <p contenteditable="true"> ~ ${citycountry}\t~ ${contact}\t~ ${email} </p>
+        <p> <a href="${linkedin}" target="_blank" contenteditable="true"> https://www.linkedin.com/in/${name} </a>
         </a> </p> </strong>
         </header>
         <hr>
         
-         <p>${summary}</p>
+         <p contenteditable="true">${summary}</p>
          
           <hr>
           <h2>Work Experience</h2>
-          <ul>
+          <ul contenteditable="true">
          
           ${work.replace(/\n/g, '<br>')}
        
@@ -106,13 +114,13 @@ button:hover {
             <hr>
 
         <h2> Relevent Skills </h2>
-        <ul>
+        <ul contenteditable="true">
          ${skills.replace(/\n/g, '<br>')}
         </ul>
         <hr>
 
          <h2>Education</h2>
-      <ul>
+      <ul contenteditable="true">
       
       ${education.replace(/\n/g, '<br>')}
         
@@ -121,25 +129,38 @@ button:hover {
 
 
       <button id="download-pdf">Download PDF</button>
-     
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
-      <script>
+    <button id="copy-link">Copy Shareable Link</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script>
         document.getElementById('download-pdf').addEventListener('click', function() {
-          const element = document.querySelector('.container');
-          const opt = {
-            margin:       0.5,
-            filename:     '${name} Resume.pdf',
-            image:        { type: 'jpeg', quality: 0.98 },
-            html2canvas:  { scale: 2 },
-            jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
-          };
-          html2pdf().from(element).set(opt).save();
+            const element = document.querySelector('.container');
+            const opt = {
+                margin: 0.5,
+                filename: '${name} Resume.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+            html2pdf().from(element).set(opt).save();
         });
+
+        document.getElementById('copy-link').addEventListener('click', function() {
+           
+            const username = '${name.toLowerCase().replace(/\s+/g, '-')}' 
+            const shareableLink = \`https://resumebuilder.vercel.app/\${username}/resume\`;
+            navigator.clipboard.writeText(shareableLink).then(() => {
+                alert('Shareable link copied to clipboard!');
+            }).catch(err => {
+                console.error('Failed to copy link: ', err);
+            });
+        });
+       
       </script>
        </body>
     </html>
             
 `;
+
   const blob = new Blob([generatedResume], { type: 'text/html' });
   const url = URL.createObjectURL(blob);
 
