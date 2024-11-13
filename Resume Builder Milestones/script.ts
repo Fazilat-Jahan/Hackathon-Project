@@ -45,7 +45,7 @@ resumeForm.addEventListener('submit', function (event: Event) {
   color: black;
 }
 .container{
-  width: 60%;
+  width: 90%;
   margin: 0 auto;
   background: beige;
   padding: 20px;
@@ -54,6 +54,7 @@ resumeForm.addEventListener('submit', function (event: Event) {
 
 .summary{
   text-align: justify;
+  font-size: 16px;
 }
 
 header{
@@ -64,9 +65,14 @@ header h1{
   font-size: 30px;
 }
 header p{
-  margin: 20px 0;
+ margin: 18px 0;
+    font-size: 11px;
+    font-weight: bold;
 }
-
+header a{
+  text-decoration: none;
+  color: black;
+}
 h2{
   font-size: 24px;
 

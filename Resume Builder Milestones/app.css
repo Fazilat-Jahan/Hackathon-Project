@@ -4,16 +4,19 @@ body{
     color: black;
   }
   .container{
-    width: 60%;
+    width: 90%;
     margin: 0 auto;
     background: beige;
     padding: 20px;
     box-shadow: 0 0 10px rgb(205, 81, 81);
   }
   
-  .summary{
-    text-align: justify;
+  @media (min-width: 768px){
+    .container{
+      width: 70%;
+          }
   }
+
   
   header{
     text-align: center;
@@ -23,9 +26,21 @@ body{
     font-size: 30px;
   }
   header p{
-    margin: 20px 0;
+    margin: 18px 0;
+    font-size: 11px;
+    font-weight: bold;
   }
-  
+  @media (min-width: 768px) {
+    header p{
+      font-size: 18px;
+      margin: 18px 0;
+    }
+  }
+header a{
+  text-decoration: none;
+  color: black;
+}
+
   h2{
     font-size: 24px;
   
@@ -37,14 +52,20 @@ body{
     background-color: rgb(205, 81, 81);
     color: white;
     border-radius: 6px;
-    width: 25%;
+    width: auto;
     cursor:grab;
+    /* text-align: right; */
   }
   
   .button:hover {
     background-color: rgb(153, 60, 60);
   } 
+  
+  .profile p{
+    text-align:justify;
+    font-size: 16px;
+  }
+
   .hidden{
     display: none;
   }
-  
