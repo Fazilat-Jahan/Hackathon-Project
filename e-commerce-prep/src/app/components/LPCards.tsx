@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { EyeIcon, HeartIcon, StarIcon } from '@heroicons/react/24/outline';
+import { EyeIcon, HeartIcon } from '@heroicons/react/24/outline';
 const LPCards = () => {
     return (
         <div>
