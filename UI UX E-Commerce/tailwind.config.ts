@@ -8,9 +8,9 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      fontFamily: {
+        integral: ['"Integral CF"', 'sans-serif'],
+        satoshi: ['"Satoshi"', 'sans-serif'],
       },
     },
   },
