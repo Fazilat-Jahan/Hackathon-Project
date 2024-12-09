@@ -1,9 +1,6 @@
 'use client';
 import { MagnifyingGlassIcon, UserCircleIcon, ShoppingCartIcon, Bars3Icon, } from '@heroicons/react/24/outline';
 import { useState } from 'react';
-import HeroSection from './components/HeroSection';
-import Categories from './components/Categories';
-import Footer from './components/Footer';
 import Link from 'next/link';
 
 export default function Home() {
@@ -11,7 +8,7 @@ export default function Home() {
 
   return (
     <div className="bg-white w-full md:w-[1440px] max-h-screen">
-      Header
+      {/* Header */}
       <header className="fixed top-0 left-0 flex md:w-[1440px] w-full h-[34px] md:h-[38px] bg-black items-center z-50">
         <div className="flex w-full md:w-[859px] mx-auto text-white items-center">
           <div className="flex font-light font-satoshi text-xs md:text-sm w-full text-center justify-center">
@@ -22,7 +19,7 @@ export default function Home() {
         </div>
       </header>
 
-      Navbar
+      {/* Navbar */}
       <nav className="fixed top-[34px] md:top-[38px] left-0 w-full bg-white shadow-md z-40">
         <div className="flex items-center justify-between px-4 py-2 w-full md:w-[1240px] mx-auto">
 
@@ -73,12 +70,7 @@ export default function Home() {
         )}
       </nav>
 
-      {/* Main Content */}
-      <main className=" py-[72px] md:py-[76px]">
-        <HeroSection />
-        <Categories />
-        <Footer />
-      </main>
+     
 
 
     </div>
