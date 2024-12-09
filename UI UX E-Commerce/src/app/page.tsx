@@ -85,22 +85,3 @@ export default function Home() {
 }
 
 
-// my code which i write for desktop 
-{/* <nav className="fixed flex w-[1240px] h-[41px] mx-[135px] my-[88px] gap-[40px] bg-white items-center justify-center">
-            <h1 className="font-bold text-[32px] font-integral">SHOP.CO</h1>
-            <ul className="flex gap-6 font-medium text-base font-satoshi">
-              <li>Shop</li>
-              <li>On Sale</li>
-              <li>New Arrival</li>
-              <li>Brands</li></ul>
-         
-            <div className="flex items-center justify-start gap-3 bg-slate-200 w-[577px] h-[48px] py-[7px] pr-3 pl-5 text-gray-500 rounded-full ">
-            <MagnifyingGlassIcon className="h-6 w-6 m-1" />
-              <h1 className="text-xs font-thin font-satoshi">Search For Products </h1>
-              </div>
-
-            <div className="flex w-[62px] h-6 gap-3.5 items-center justify-center">
-              <UserCircleIcon className="w-6 h-6" />
-              <ShoppingCartIcon className="w-6 h-6" />
-            </div>
-        </nav> */}
