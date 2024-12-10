@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Categories = () => {
     return (
@@ -197,7 +198,8 @@ const Categories = () => {
                     <div className='flex flex-col sm:flex-row space-y-5 sm:space-y-0 sm:space-x-5 justify-center items-center place-items-center'>
                         {/* 1st card */}
                         <div className='md:w-[407px] md:h-[289px] w-[310px] h-[190px]  '>
-                            <Image src={"/casual.png"} alt='Card1' width={407} height={289} />
+                            <Link href="/browseStyles">
+                            <Image src={"/casual.png"} alt='Casual' width={407} height={289} /></Link>
                         </div>
 
                         {/* 2nd card */}

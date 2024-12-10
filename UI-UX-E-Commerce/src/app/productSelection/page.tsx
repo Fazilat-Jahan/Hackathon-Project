@@ -5,10 +5,9 @@ import Header from "../components/Header";
 const ProductSection = () => {
   return (
     <div>
-      <Header />
-      <div className="p-6">
-        {/* Breadcrumb */}
-        <nav className="text-sm text-gray-500 mb-6">
+            <Header/>
+            <div className=" py-[72px] md:py-[150px]">
+            <nav className="text-sm text-gray-500 mb-2 px-6">
           <a href="/" className="hover:underline">Home</a> &gt;{" "}
           <a href="/shop" className="hover:underline">Shop</a> &gt;{" "}
           <a href="/men" className="hover:underline">Men</a> &gt;{" "}
