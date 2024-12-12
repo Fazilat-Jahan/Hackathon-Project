@@ -37,8 +37,8 @@ export default function Home() {
 
 
           <ul className="hidden md:flex gap-6 font-medium text-base font-satoshi">
-            <Link href="/productSelection"><li>Shop</li></Link>
-            <Link href="#topSelling"> <li>On Sale</li></Link>
+            <Link href="/browseStyles"><li>Shop</li></Link>
+            <Link href="/productSelection"> <li>On Sale</li></Link>
             <Link href="#newArrivals"> <li>New Arrival</li></Link>
             <Link href="#brandStyles"> <li>Brands</li></Link>
           </ul>
@@ -52,7 +52,7 @@ export default function Home() {
 
           <div className="flex items-center gap-3">
             <MagnifyingGlassIcon className="h-6 w-6 md:hidden" />
-            <ShoppingCartIcon className="h-6 w-6" />
+           <Link href={"/Cart"}> <ShoppingCartIcon className="h-6 w-6" /> </Link>
             <UserCircleIcon className="h-6 w-6" />
           </div>
         </div>
@@ -61,17 +61,14 @@ export default function Home() {
         {menuOpen && (
           <div className="bg-white shadow-md p-4 md:hidden">
             <ul className="flex flex-col gap-4 font-medium text-base font-satoshi">
-              <Link href="/productSelection"><li>Shop</li></Link>
-              <Link href="#topSelling"> <li>On Sale</li></Link>
+              <Link href="/browseStyles"><li>Shop</li></Link>
+              <Link href="/productSelection"> <li>On Sale</li></Link>
               <Link href="#newArrivals"> <li>New Arrival</li></Link>
               <Link href="#brandStyles"> <li>Brands</li></Link>
             </ul>
           </div>
         )}
       </nav>
-
-     
-
 
     </div>
   );

@@ -49,7 +49,7 @@ const ProductPage = () => {
                             <li className="flex  justify-between"><a href="#" className="text-gray-600 hover:text-black">Shorts</a>&gt;{" "}</li>
                         </ul>
 
-                        <div className="border-b border-gray-300 w-[247px] mt-5"></div>
+                        <div className="border-b border-gray-300 md:w-[247px] mt-5"></div>
                     </div>
 
 
@@ -75,7 +75,7 @@ const ProductPage = () => {
                             <span>${priceRange[1]}</span>
                         </div>
 
-                        <div className="border-b border-gray-300 w-[247px] mt-5"></div>
+                        <div className="border-b border-gray-300 md:w-[247px] mt-5"></div>
                     </div>
 
                     {/* Colors */}
@@ -94,7 +94,7 @@ const ProductPage = () => {
                             <div className="w-[37px] h-[37px] bg-black rounded-full"></div>
                         </div>
 
-                        <div className="border-b border-gray-300 w-[247px] mt-5"></div>
+                        <div className="border-b border-gray-300 md:w-[247px] mt-5"></div>
                     </div>
 
                     {/* Sizes */}
@@ -112,7 +112,7 @@ const ProductPage = () => {
                             <button className="px-5 py-[10px] bg-gray-200 border rounded-xl hover:bg-black hover:text-white">4X-Large</button>
                         </div>
 
-                        <div className="border-b border-gray-300 w-[247px] mt-5"></div>
+                        <div className="border-b border-gray-300 md:w-[247px] mt-5"></div>
                     </div>
 
                     {/* Dress Style */}
@@ -125,7 +125,7 @@ const ProductPage = () => {
                             <li className="flex  justify-between"><a href="#" className="text-gray-600 hover:text-black">Gym</a>&gt;{" "}</li>
                         </ul>
 
-                        <div className="border-b border-gray-300 w-[247px] mt-5"></div>
+                        <div className="border-b border-gray-300 md:w-[247px] mt-5"></div>
                     </div>
 
                     {/* Apply Filter Button */}
@@ -137,19 +137,19 @@ const ProductPage = () => {
                 {/* Right Section: Cards */}
                 
                
-                <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+                <div className="grid grid-cols-2 md:grid-cols-3 md:gap-6 gap-2 w-full md:pr-12">
                     {/* Heading */}
 
-                <div className="col-span-full mb-6">
+                <div className="col-span-full md:mb-6 mb-3">
                 <div className="flex justify-between items-center">
                     <div>
                         <h1 className="text-2xl font-bold font-satoshi">Casual</h1>
                         
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 font-satoshi font-medium text-sm md:text-base">
                     <p className="text-gray-500">Showing 1-10 of 100 Products</p>
-                        <span className="text-gray-600">Sort by:</span>
-                        <button className="border rounded-lg px-3 py-2 bg-white ">
+                        <span className="text-gray-600 md:block hidden">Sort by:</span>
+                        <button className="md:block hidden border rounded-lg px-3 py-2 bg-white ">
                             Most Popular<i className="fa fa-caret-down px-2"></i>
                         </button>
                     </div>
@@ -157,9 +157,9 @@ const ProductPage = () => {
             </div>
                     
                     {/* Card 1 */}
-                    <div className="bg-white p-4 shadow rounded-lg">
-                        <div className="bg-gray-100 md:w-[295px] md:h-[298px] w-[198px] h-[200px] mx-auto rounded-lg">
-                            <Image src={"/casual1.png"} alt="Card1" width={285} height={298} />
+                    <div className="bg-white p-4 shadow rounded-lg ">
+                        <div className="place-content-center">
+                            <Image src={"/casual1.png"} alt="Card1" width={295} height={298} className="md:w-[295px] md:h-[298px] w-[172px] h-[174px] items-center justify-center" />
                         </div>
                         <div className="mt-4">
                             <h1 className="text-black md:text-xl text-[16px] font-bold font-satoshi">Gradient Graphic T-shirt</h1>
@@ -174,8 +174,8 @@ const ProductPage = () => {
 
                     {/* Card 2 */}
                     <div className=" p-4 shadow rounded-lg">
-                        <div className="bg-gray-100 md:w-[295px] md:h-[298px] w-[198px] h-[200px] mx-auto rounded-lg">
-                            <Image src={"/casual2.png"} alt="Card1" width={285} height={298} />
+                        <div className="place-items-center">
+                            <Image src={"/casual2.png"} alt="Card1" width={295} height={298} className="md:w-[295px] md:h-[298px] w-[172px] h-[174px] items-center justify-center" />
                         </div>
                         <div className="mt-4">
                             <h1 className="text-black md:text-xl text-[16px] font-bold font-satoshi">Polo with Tipping Details</h1>
@@ -191,8 +191,8 @@ const ProductPage = () => {
 
                     {/* Card 3 */}
                     <div className=" p-4 shadow rounded-lg">
-                        <div className="bg-gray-100 md:w-[295px] md:h-[298px] w-[198px] h-[200px] mx-auto rounded-lg">
-                            <Image src={"/casual3.png"} alt="Card1" width={285} height={298} />
+                        <div className="place-items-center">
+                            <Image src={"/casual3.png"} alt="Card1" width={295} height={298} className="md:w-[295px] md:h-[298px] w-[172px] h-[174px] items-center justify-center" />
                         </div>
                         <div className="mt-4">
                             <h1 className="text-black md:text-xl text-[16px] font-bold font-satoshi">Black Striped T-shirt</h1>
@@ -209,8 +209,8 @@ const ProductPage = () => {
 
                     {/* Card 4 */}
                     <div className=" p-4 shadow rounded-lg">
-                        <div className="bg-gray-100 md:w-[295px] md:h-[298px] w-[198px] h-[200px] mx-auto rounded-lg">
-                            <Image src={"/fjeans.png"} alt="Card1" width={285} height={298} />
+                        <div className=" place-items-center">
+                            <Image src={"/fjeans.png"} alt="Card1" width={295} height={298} className="md:w-[295px] md:h-[298px] w-[172px] h-[174px] items-center justify-center" />
                         </div>
                         <div className="mt-4">
                             <h1 className="text-black md:text-xl text-[16px] font-bold font-satoshi">Skinny Fit Jeans</h1>
@@ -225,8 +225,8 @@ const ProductPage = () => {
 
                     {/* Card 5 */}
                     <div className=" p-4 shadow rounded-lg">
-                        <div className="bg-gray-100 md:w-[295px] md:h-[298px] w-[198px] h-[200px] mx-auto rounded-lg">
-                            <Image src={"/shirt.png"} alt="Card1" width={285} height={298} />
+                        <div className=" place-items-center">
+                            <Image src={"/shirt.png"} alt="Card1" width={295} height={298} className="md:w-[295px] md:h-[298px] w-[172px] h-[174px] items-center justify-center" />
                         </div>
                         <div className="mt-4">
                             <h1 className="text-black md:text-xl text-[16px] font-bold font-satoshi">Scheckered Shirt</h1>
@@ -242,8 +242,8 @@ const ProductPage = () => {
 
                     {/* Card 6 */}
                     <div className=" p-4 shadow rounded-lg">
-                        <div className="bg-gray-100 md:w-[295px] md:h-[298px] w-[198px] h-[200px] mx-auto rounded-lg">
-                            <Image src={"/oshirt.png"} alt="Card1" width={285} height={298} />
+                        <div className=" place-items-center">
+                            <Image src={"/oshirt.png"} alt="Card1" width={295} height={298} className="md:w-[295px] md:h-[298px] w-[172px] h-[174px] items-center justify-center" />
                         </div>
                         <div className="mt-4">
                             <h1 className="text-black md:text-xl text-[16px] font-bold font-satoshi">Sleeve Striped T-Shirt</h1>
@@ -259,8 +259,8 @@ const ProductPage = () => {
 
                     {/* Card 7 */}
                     <div className=" p-4 shadow rounded-lg">
-                        <div className="bg-gray-100 md:w-[295px] md:h-[298px] w-[198px] h-[200px] mx-auto rounded-lg">
-                            <Image src={"/gshirt.png"} alt="Card1" width={285} height={298} />
+                        <div className="place-items-center">
+                            <Image src={"/gshirt.png"} alt="Card1" width={295} height={298} className="md:w-[295px] md:h-[298px] w-[172px] h-[174px] items-center justify-center" />
                         </div>
                         <div className="mt-4">
                             <h1 className="text-black md:text-xl text-[16px] font-bold font-satoshi">Vertical Striped Shirt</h1>
@@ -277,8 +277,8 @@ const ProductPage = () => {
 
                     {/* Card 8 */}
                     <div className=" p-4 shadow rounded-lg">
-                        <div className="bg-gray-100 md:w-[295px] md:h-[298px] w-[198px] h-[200px] mx-auto rounded-lg">
-                            <Image src={"/orangeshirt.png"} alt="Card1" width={285} height={298} />
+                        <div className=" place-items-center">
+                            <Image src={"/orangeshirt.png"} alt="Card1" width={295} height={298} className="md:w-[295px] md:h-[298px] w-[172px] h-[174px] items-center justify-center" />
                         </div>
                         <div className="mt-4">
                             <h1 className="text-black md:text-xl text-[16px] font-bold font-satoshi">Courage Graphic T-shirt</h1>
@@ -295,8 +295,8 @@ const ProductPage = () => {
 
                     {/* Card 9 */}
                     <div className=" p-4 shadow rounded-lg">
-                        <div className="bg-gray-100 md:w-[295px] md:h-[298px] w-[198px] h-[200px] mx-auto rounded-lg">
-                            <Image src={"/short.png"} alt="Card1" width={285} height={298} />
+                        <div className=" place-items-center">
+                            <Image src={"/short.png"} alt="Card1" width={295} height={298} className="md:w-[295px] md:h-[298px] w-[172px] h-[174px] items-center justify-center" />
                         </div>
                         <div className="mt-4">
                             <h1 className="text-black md:text-xl text-[16px] font-bold font-satoshi">Loose Fit Bermuda Shorts</h1>

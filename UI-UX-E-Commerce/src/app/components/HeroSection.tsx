@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const HeroSection = () => {
     const brandlogos = [
@@ -20,7 +21,7 @@ const HeroSection = () => {
                     <h2 className='hidden md:block font-satoshi font-medium md:text-[16px] text-sm mt-4'>Browse through our diverse range of meticulously crafted garments, designed<br />to bring out your individuality and cater to your sense of style.</h2>
                     <h2 className='md:hidden block font-satoshi font-medium md:text-[16px] text-sm mt-4 text-start'>Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.</h2>
                     
-                    <button className='md:w-[210px] w-[358px] h-[52px] md:mt-6 rounded-full bg-black text-center py-3 font-satoshi text-white justify-center items-center text-[16px] mt-4'>Shop Now</button>
+                    <Link href={"/browseStyles"}> <button className='md:w-[210px] w-[358px] h-[52px] md:mt-6 rounded-full bg-black text-center py-3 font-satoshi text-white justify-center items-center text-[16px] mt-4'>Shop Now</button> </Link>
 
                     {/* stats */}
                     <div className='mt-6 md:hidden flex flex-col items-center justify-center font-satoshi text-black'>

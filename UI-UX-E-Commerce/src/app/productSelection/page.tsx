@@ -9,8 +9,8 @@ const ProductSection = () => {
             <div className=" py-[72px] md:py-[150px]">
             <nav className="text-sm text-gray-500 mb-2 px-6">
           <a href="/" className="hover:underline">Home</a> &gt;{" "}
-          <a href="/shop" className="hover:underline">Shop</a> &gt;{" "}
-          <a href="/men" className="hover:underline">Men</a> &gt;{" "}
+          <a href="/" className="hover:underline">Shop</a> &gt;{" "}
+          <a href="/" className="hover:underline">Men</a> &gt;{" "}
           <span className="text-gray-700">T-Shirts</span>
         </nav>
 
