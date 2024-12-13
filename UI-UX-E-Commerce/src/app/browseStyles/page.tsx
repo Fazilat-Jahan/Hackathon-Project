@@ -29,7 +29,7 @@ const ProductPage = () => {
 
             
 
-            <div className="flex flex-col md:flex-row p-6 gap-8">
+            <div className="flex flex-col md:flex-row p-6 gap-8 font-satoshi">
 
                 {/* Left Section: Sidebar */}
                 <div className="w-full md:w-[295px] bg-gray-50 px-6 rounded-lg space-y-6">
@@ -168,7 +168,7 @@ const ProductPage = () => {
                                 <i className="fas fa-star text-yellow-400"></i>
                                 <i className="fas fa-star text-yellow-400"></i>
                                 <i className="fas fa-star bg-gradient-to-r from-yellow-400 to-gray-300 bg-clip-text text-transparent"></i><span className="ml-2 text-gray-600">3.5/5</span></h2>
-                            <h3 className='text-black text-2xl font-bold font-satoshi'>$145</h3>
+                            <h3 className='text-black md:text-2xl text-xl font-bold font-satoshi'>$145</h3>
                         </div>
                     </div>
 
@@ -185,7 +185,7 @@ const ProductPage = () => {
                                 <i className="fas fa-star text-yellow-400"></i>
                                 <i className="fas fa-star text-yellow-400"></i>
                                 <i className="fas fa-star bg-gradient-to-r from-yellow-400 to-gray-300 bg-clip-text text-transparent"></i><span className="ml-2 text-gray-600">4.5/5</span></h2>
-                            <h3 className='text-black text-2xl font-bold font-satoshi'>$180 </h3>
+                            <h3 className='text-black md:text-2xl text-xl font-bold font-satoshi'>$180 </h3>
                         </div>
                     </div>
 
@@ -203,7 +203,7 @@ const ProductPage = () => {
                                 <i className="fas fa-star text-yellow-400"></i>
                                 <i className="fas fa-star text-yellow-400"></i>
                                 <span className="ml-2 text-gray-600">5.0/5</span></h2>
-                            <h3 className='text-black text-2xl font-bold font-satoshi'>$120 <span className=' text-gray-600 px-2 line-through'>$150</span> </h3>
+                            <h3 className='text-black md:text-2xl text-xl font-bold font-satoshi'>$120 <span className=' text-gray-600 px-2 line-through'>$150</span> </h3>
                         </div>
                     </div>
 
@@ -219,7 +219,7 @@ const ProductPage = () => {
                                 <i className="fas fa-star text-yellow-400"></i>
                                 <i className="fas fa-star text-yellow-400"></i>
                                 <i className="fas fa-star bg-gradient-to-r from-yellow-400 to-gray-300 bg-clip-text text-transparent"></i><span className="ml-2 text-gray-600">3.5/5</span></h2>
-                            <h3 className='text-black text-2xl font-bold font-satoshi'>$240 <span className=' text-gray-600 px-2 line-through'>$260</span> </h3>
+                            <h3 className='text-black md:text-2xl text-xl font-bold font-satoshi'>$240 <span className=' text-gray-600 px-2 line-through'>$260</span> </h3>
                         </div>
                     </div>
 
@@ -236,7 +236,7 @@ const ProductPage = () => {
                                 <i className="fas fa-star text-yellow-400"></i>
                                 <i className="fas fa-star text-yellow-400"></i>
                                 <i className="fas fa-star bg-gradient-to-r from-yellow-400 to-gray-300 bg-clip-text text-transparent"></i><span className="ml-2 text-gray-600">4.5/5</span></h2>
-                            <h3 className='text-black text-2xl font-bold font-satoshi'>$180</h3>
+                            <h3 className='text-black md:text-2xl text-xl font-bold font-satoshi'>$180</h3>
                         </div>
                     </div>
 
@@ -253,7 +253,7 @@ const ProductPage = () => {
                                 <i className="fas fa-star text-yellow-400"></i>
                                 <i className="fas fa-star text-yellow-400"></i>
                                 <i className="fas fa-star bg-gradient-to-r from-yellow-400 to-gray-300 bg-clip-text text-transparent"></i><span className="ml-2 text-gray-600">4.5/5</span></h2>
-                            <h3 className='text-black text-2xl font-bold font-satoshi'>$130 <span className=' text-gray-600 px-2 line-through'>$160</span> </h3>
+                            <h3 className='text-black md:text-2xl text-xl font-bold font-satoshi'>$130 <span className=' text-gray-600 px-2 line-through'>$160</span> </h3>
                         </div>
                     </div>
 
@@ -271,7 +271,7 @@ const ProductPage = () => {
                                 <i className="fas fa-star text-yellow-400"></i>
                                 <i className="fas fa-star text-yellow-400"></i>
                                 <span className="ml-2 text-gray-600">5.0/5</span></h2>
-                            <h3 className='text-black text-2xl font-bold font-satoshi'>$212 <span className=' text-gray-600 px-2 line-through'>$232</span> </h3>
+                            <h3 className='text-black md:text-2xl text-xl font-bold font-satoshi'>$212 <span className=' text-gray-600 px-2 line-through'>$232</span> </h3>
                         </div>
                     </div>
 
@@ -289,7 +289,7 @@ const ProductPage = () => {
                                 <i className="fas fa-star text-yellow-400"></i>
                                 <i className="fas fa-star text-yellow-400"></i>
                                 <span className="ml-2 text-gray-600">4.5/5</span></h2>
-                            <h3 className='text-black text-2xl font-bold font-satoshi'>$145 </h3>
+                            <h3 className='text-black md:text-2xl text-xl font-bold font-satoshi'>$145 </h3>
                         </div>
                     </div>
 
@@ -304,7 +304,7 @@ const ProductPage = () => {
                                 <i className="fas fa-star text-yellow-400"></i>
                                 <i className="fas fa-star text-yellow-400"></i>
                                 <i className="fas fa-star bg-gradient-to-r from-yellow-400 to-gray-300 bg-clip-text text-transparent"></i><span className="ml-2 text-gray-600">3.0/5</span></h2>
-                            <h3 className='text-black text-2xl font-bold font-satoshi'>$80 </h3>
+                            <h3 className='text-black md:text-2xl text-xl font-bold font-satoshi'>$80 </h3>
                         </div>
                     </div>
                     
