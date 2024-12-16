@@ -53,7 +53,7 @@ const ProductSection = () => {
   return (
     <div>
       <Header />
-      <div className="py-[72px] md:py-[150px] md:mx-20 mx-auto items-center justify-center">
+      <div className="py-[82px] md:py-[150px] md:mx-20 mx-2 items-center justify-center">
         <nav className="text-sm text-gray-500 mb-2 px-6">
           <a href="/" className="hover:underline">Home</a> &gt;{" "}
           <a href="/" className="hover:underline">Shop</a> &gt;{" "}
@@ -62,7 +62,7 @@ const ProductSection = () => {
         </nav>
 
         {/* Product Layout */}
-        <div className="flex flex-col md:flex-row gap-8">
+        <div className="flex flex-col md:flex-row gap-8 mx-2">
           {/* Left Section: Images */}
           <div className="flex flex-col-reverse md:flex-row gap-4 w-full md:w-1/2">
             <div className="flex flex-row gap-4 md:flex-col">
@@ -94,7 +94,7 @@ const ProductSection = () => {
                 alt="Main T-shirt"
                 width={445}
                 height={530}
-                className="rounded-2xl w-[358px] h-[290px] md:w-[445px] md:h-[530px] border border-gray-200 hover:border-black"
+                className="rounded-2xl w-[358px] h-[290px] md:w-[445px] md:h-[530px] border border-gray-200 hover:border-black "
               />
             </div>
           </div>
@@ -107,10 +107,10 @@ const ProductSection = () => {
                 <i className="fas fa-star w-[20px] h-[20px] text-yellow-400"></i>
                 <i className="fas fa-star w-[20px] h-[20px] text-yellow-400"></i>
                 <i className="fas fa-star w-[20px] h-[20px] text-yellow-400"></i>
-                <i className="fas fa-star w-[20px] h-[20px] bg-gradient-to-r from-yellow-400 to-gray-300 bg-clip-text text-transparent"></i></div>
+                <i className="fas fa-star w-[20px] h-[20px] bg-gradient-to-r from-yellow-400 to-white bg-clip-text text-transparent"></i></div>
               <span className="pl-1 font-satoshi font-medium md:text-base text-sm text-gray-500">(4.5)</span>
             </div>
-            <div className="font-satoshi mb-4">
+            <div className="font-satoshi mb-4 justify-between space-x-3">
               <span className="md:text-[32px] text-2xl font-bold">$260</span>{" "}
               <span className="line-through md:text-[32px] text-2xl font-bold text-gray-500">$300</span>{" "}
               <span className="text-red-600 font-medium md:text-base text-sm bg-red-200 rounded-full px-3">-20%</span>
@@ -129,14 +129,14 @@ const ProductSection = () => {
             <div className="mb-6">
               <span className="block font-medium font-satoshi text-sm md:text-base mb-2">Choose Size:</span>
               <div className="flex gap-4">
-                <button className="font-satoshi font-medium text-sm md:text-base md:px-4 md:py-2 px-2 py-1 border rounded-full hover:bg-gray-100">Small</button>
-                <button className="font-satoshi font-medium text-sm md:text-base md:px-4 md:py-2 px-2 py-1 border rounded-full hover:bg-gray-100">Medium</button>
-                <button className="font-satoshi font-medium text-sm md:text-base md:px-4 md:py-2 px-2 py-1 border rounded-full bg-gray-200 ">Large</button>
-                <button className="font-satoshi font-medium text-sm md:text-base md:px-4 md:py-2 px-2 py-1 border rounded-full bg-gray-200 ">X-Large</button>
+                <button className="font-satoshi font-medium text-sm md:text-base md:px-4 md:py-2 px-2 py-1 border rounded-full bg-gray-200 hover:bg-black">Small</button>
+                <button className="font-satoshi font-medium text-sm md:text-base md:px-4 md:py-2 px-2 py-1 border rounded-full bg-gray-200 hover:bg-black">Medium</button>
+                <button className="font-satoshi font-medium text-sm md:text-base md:px-4 md:py-2 px-2 py-1 border rounded-full bg-gray-200 hover:bg-black">Large</button>
+                <button className="font-satoshi font-medium text-sm md:text-base md:px-4 md:py-2 px-2 py-1 border rounded-full bg-gray-200 hover:bg-black">X-Large</button>
               </div>
             </div>
             <div className="flex justify-around items-center gap-4">
-              <div className="flex items-center justify-around font-satoshi text-sm md:text-base border w-[110px] h-[44px] md:w-[170px] md:h-[52px] md:p-6 p-[16px] bg-gray-100 rounded-full">
+              <div className="flex items-center justify-around  font-satoshi text-sm md:text-base border w-[110px] h-[44px] md:w-[170px] md:h-[52px] md:p-6 p-[16px] bg-gray-100 rounded-full">
                 <button className=" hover:bg-gray-100">-</button>
                 <span className="">1</span>
                 <button className="hover:bg-gray-100">+</button>
@@ -149,14 +149,14 @@ const ProductSection = () => {
         </div>
 
         {/* Reviews Section */}
-        <div className="flex justify-around border-b md:my-12 my-8 font-satoshi font-medium text-xl">
-          <button className="px-6 py-2 text-gray-600 hover:text-black border-b-2 border-transparent focus:border-black">
+        <div className="flex justify-around border-b md:my-12 my-8 font-satoshi font-medium md:text-xl text-base mx-1">
+          <button className="md:px-6 py-2 text-gray-600 hover:text-black border-b-2 border-transparent focus:border-black">
             Product Details
           </button>
-          <button className="px-6 py-2 text-gray-600 hover:text-black border-b-2 border-black  focus:border-black">
+          <button className="md:px-6 py-2 text-gray-600 hover:text-black border-b-2 border-black  focus:border-black">
             Rating & Reviews
           </button>
-          <button className="px-6 py-2 text-gray-600 hover:text-black border-b-2 border-transparent focus:border-black">
+          <button className="md:px-6 py-2 text-gray-600 hover:text-black border-b-2 border-transparent focus:border-black">
             FAQs
           </button>
         </div>
@@ -165,10 +165,10 @@ const ProductSection = () => {
         <div className="flex justify-between items-center mb-6 font-satoshi">
           <h2 className="text-2xl font-bold font-satoshi">All Reviews <span className="text-base font-medium">(451)</span> </h2>
           <div className="flex items-center gap-4">
-            <button className="flex items-center gap-2 md:px-4 md:py-2 px-2 py-1 border rounded-lg text-gray-600">
+            <button className="flex items-center gap-2 md:px-4 md:py-2 px-2 py-1 border rounded-full text-gray-600">
               <i className="fas fa-sliders-h"></i>
             </button>
-            <button className="md:px-4 md:py-2 px-2 py-1 border rounded-lg text-base font-medium">
+            <button className="hidden md:block md:px-4 md:py-2 px-2 py-1 border rounded-lg text-base font-medium">
               Latest <i className="fas fa-chevron-down md:pl-2 pl-0.5"></i>
             </button>
             <button className="md:px-4 md:py-2 px-2 py-1 bg-black text-white rounded-full hover:bg-gray-800 text-base font-medium">
@@ -191,7 +191,7 @@ const ProductSection = () => {
                 <i className="fas fa-star w-[22px] h-[22px] text-yellow-400"></i>
                 <i className="fas fa-star w-[22px] h-[22px] text-yellow-400"></i>
                 <i className="fas fa-star w-[22px] h-[22px] text-yellow-400"></i>
-                <i className="fas fa-star w-[22px] h-[22px] bg-gradient-to-r from-yellow-400 to-gray-300 bg-clip-text text-transparent"></i>
+                <i className="fas fa-star w-[22px] h-[22px] bg-gradient-to-r from-yellow-400 to-white bg-clip-text text-transparent"></i>
                 {/* <span className="px-2">{review.rating}/5</span> */}
               </div>
               <p className="text-gray-600 font-medium text-base">{review.text}</p>
