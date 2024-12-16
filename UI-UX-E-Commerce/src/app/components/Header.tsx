@@ -20,7 +20,7 @@ export default function Home() {
       </header>
 
       {/* Navbar */}
-      <nav className="fixed top-[34px] md:top-[38px] left-0 w-full bg-white shadow-md z-40">
+      <nav className="fixed top-[34px] md:top-[38px] md:w-[1440px] left-0 w-full bg-white shadow-md z-40">
         <div className="flex items-center justify-between px-4 py-2 w-full md:w-[1240px] mx-auto">
 
           <div className="md:hidden">

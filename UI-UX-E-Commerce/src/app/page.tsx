@@ -10,7 +10,7 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="bg-white w-full md:w-[1440px] max-h-screen">
+    <div className="bg-white md:w-[1440px] max-h-screen max-w-screen-sm">
       {/* Header */}
       <header className="fixed top-0 left-0 flex md:w-[1440px] w-full h-[34px] md:h-[38px] bg-black items-center z-50">
         <div className="flex w-full md:w-[859px] mx-auto text-white items-center">
@@ -23,7 +23,7 @@ export default function Home() {
       </header>
 
       {/* Navbar */}
-      <nav className="fixed top-[34px] md:top-[38px] left-0 w-full bg-white shadow-md z-40">
+      <nav className="fixed top-[34px] md:w-[1440px] md:top-[38px] left-0 w-full bg-white shadow-md z-40">
         <div className="flex items-center justify-between px-4 py-2 w-full md:w-[1240px] mx-auto">
 
           <div className="md:hidden">
@@ -74,7 +74,7 @@ export default function Home() {
       </nav>
 
       {/* Main Content */}
-      <main className=" py-[72px] md:py-[76px]">
+      <main className=" py-[72px] md:py-[76px] items-center justify-center">
         <HeroSection />
         <Categories />
         <Footer />

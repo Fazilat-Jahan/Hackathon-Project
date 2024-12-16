@@ -53,7 +53,7 @@ const ProductSection = () => {
   return (
     <div>
       <Header />
-      <div className="py-[82px] md:py-[150px] md:mx-20 mx-2 items-center justify-center">
+      <div className="py-[100px] md:py-[150px] md:mx-20 mx-2 items-center justify-center">
         <nav className="text-sm text-gray-500 mb-2 px-6">
           <a href="/" className="hover:underline">Home</a> &gt;{" "}
           <a href="/" className="hover:underline">Shop</a> &gt;{" "}
@@ -62,9 +62,9 @@ const ProductSection = () => {
         </nav>
 
         {/* Product Layout */}
-        <div className="flex flex-col md:flex-row gap-8 mx-2">
+        <div className="flex flex-col md:flex-row gap-8">
           {/* Left Section: Images */}
-          <div className="flex flex-col-reverse md:flex-row gap-4 w-full md:w-1/2">
+          <div className="flex flex-col-reverse md:flex-row gap-4 w-full md:w-1/2 mx-2">
             <div className="flex flex-row gap-4 md:flex-col">
               <Image
                 src="/PS4.png"
@@ -100,7 +100,7 @@ const ProductSection = () => {
           </div>
 
           {/* Right Section: Product Info */}
-          <div className="w-full md:w-1/2">
+          <div className="w-full md:w-1/2 mx-1">
             <h1 className="md:text-[40px] text-[24px] font-integral font-bold mb-2">ONE LIFE GRAPHIC TSHIRT</h1>
             <div className="flex items-center mb-4">
               <div className=""><i className="fas fa-star w-[22px] h-[22px] text-yellow-400"></i>
@@ -129,10 +129,10 @@ const ProductSection = () => {
             <div className="mb-6">
               <span className="block font-medium font-satoshi text-sm md:text-base mb-2">Choose Size:</span>
               <div className="flex gap-4">
-                <button className="font-satoshi font-medium text-sm md:text-base md:px-4 md:py-2 px-2 py-1 border rounded-full bg-gray-200 hover:bg-black">Small</button>
-                <button className="font-satoshi font-medium text-sm md:text-base md:px-4 md:py-2 px-2 py-1 border rounded-full bg-gray-200 hover:bg-black">Medium</button>
-                <button className="font-satoshi font-medium text-sm md:text-base md:px-4 md:py-2 px-2 py-1 border rounded-full bg-gray-200 hover:bg-black">Large</button>
-                <button className="font-satoshi font-medium text-sm md:text-base md:px-4 md:py-2 px-2 py-1 border rounded-full bg-gray-200 hover:bg-black">X-Large</button>
+                <button className="font-satoshi font-medium text-sm md:text-base md:px-4 md:py-2 px-2 py-1 border rounded-full hover:text-white bg-gray-200 hover:bg-black ">Small</button>
+                <button className="font-satoshi font-medium text-sm md:text-base md:px-4 md:py-2 px-2 py-1 border rounded-full hover:text-white bg-gray-200 hover:bg-black">Medium</button>
+                <button className="font-satoshi font-medium text-sm md:text-base md:px-4 md:py-2 px-2 py-1 border rounded-full hover:text-white bg-gray-200 hover:bg-black">Large</button>
+                <button className="font-satoshi font-medium text-sm md:text-base md:px-4 md:py-2 px-2 py-1 border rounded-full hover:text-white bg-gray-200 hover:bg-black">X-Large</button>
               </div>
             </div>
             <div className="flex justify-around items-center gap-4">

@@ -61,7 +61,7 @@ const HeroSection = () => {
             <Image
               src={logo.src}
               alt={logo.alt}
-              width={150} // Adjust the size of the logos if needed
+              width={150} 
               height={150}
               className="object-contain"
             />

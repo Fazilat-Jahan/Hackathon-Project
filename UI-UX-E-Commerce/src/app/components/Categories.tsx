@@ -13,12 +13,12 @@ const Categories = () => {
 
                     <div className='grid grid-cols-2 md:grid-cols-4 md:space-x-4 gap-10 px-2 items-center justify-between md:mx-4 mx-auto '>
                         {/* card1 */}
-                        <div>
-                            <div className='bg-gray-100 md:w-[295px] md:h-[298px] w-[198px] h-[200px]'>
-                                <Image src={"/tshirt.png"} alt='Card1' width={285} height={298} />
+                        <div className='p-0.5'>
+                            <div className='bg-gray-100 place-items-center'>
+                                <Image src={"/tshirt.png"} alt='Card1' width={295} height={298} className='md:w-[295px] md:h-[298px] w-[198px] h-[200px] items-center justify-center'/>
                             </div>
 
-                            <div className='w-[225px] h-[227px] justify-start space-y-2'>
+                            <div className='justify-start mt-4'>
                                 <h1 className='text-black md:text-xl text-sm font-bold font-satoshi'>T-SHIRT WITH TAPE DETAILS</h1>
 
                                 <h2 className='text-black md:text-sm text-[12px] font-semibold flex font-satoshi gap-1'>
@@ -33,12 +33,12 @@ const Categories = () => {
 
                         {/* card 2 */}
 
-                        <div>
-                            <div className='bg-gray-100 md:w-[295px] md:h-[298px] w-[198px] h-[200px]'>
-                                <Image src={"/jeans.png"} alt='Card1' width={285} height={298} />
+                        <div className='p-0.5'>
+                            <div className='bg-gray-100 place-items-center '>
+                                <Image src={"/jeans.png"} alt='Card1' width={295} height={298} className='md:w-[295px] md:h-[298px] w-[198px] h-[200px] items-center justify-center'/>
                             </div>
 
-                            <div className='w-[225px] h-[227px] justify-start space-y-2'>
+                            <div className='justify-start mt-4'>
                                 <h1 className='text-black md:text-xl text-sm font-bold font-satoshi'>SKINNY FIT JEANS</h1>
 
                                 <h2 className='text-black md:text-sm text-[12px] font-semibold flex font-satoshi gap-1'>
@@ -53,12 +53,12 @@ const Categories = () => {
 
                         {/* card 3 */}
 
-                        <div>
-                            <div className='bg-gray-100 md:w-[295px] md:h-[298px] w-[198px] h-[200px]'>
-                                <Image src={"/tshirt.png"} alt='Card1' width={285} height={298} />
+                        <div className='p-0.5' >
+                            <div className='bg-gray-100 place-items-center'>
+                                <Image src={"/tshirt.png"} alt='Card1' width={295} height={298} className='md:w-[295px] md:h-[298px] w-[198px] h-[200px] items-center justify-center'/>
                             </div>
 
-                            <div className='w-[225px] h-[227px] justify-start space-y-2'>
+                            <div className=' justify-start mt-4'>
                                 <h1 className='text-black md:text-xl text-sm font-bold font-satoshi'>SLEEVE STRIPED T-SHIRT</h1>
 
                                 <h2 className='text-black md:text-sm text-[12px] font-semibold flex font-satoshi gap-1'>
@@ -73,12 +73,12 @@ const Categories = () => {
 
                         {/* card 4 */}
 
-                        <div>
-                            <div className='bg-gray-100 md:w-[295px] md:h-[298px] w-[198px] h-[200px]'>
-                                <Image src={"/oshirt.png"} alt='Card1' width={285} height={298} />
+                        <div className='p-0.5'>
+                            <div className='bg-gray-100 '>
+                                <Image src={"/oshirt.png"} alt='Card1' width={295} height={298} className='md:w-[295px] md:h-[298px] w-[198px] h-[200px] items-center justify-center'/>
                             </div>
 
-                            <div className='w-[225px] h-[227px] justify-start space-y-2'>
+                            <div className='justify-start mt-4'>
                                 <h1 className='text-black md:text-xl text-sm font-bold font-satoshi'>SLEEVE STRIPED T-SHIRT</h1>
 
                                 <h2 className='text-black md:text-sm text-[12px] font-semibold flex font-satoshi gap-1'>
@@ -91,8 +91,8 @@ const Categories = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='flex items-center justify-center'>
-                        <button className='text-center text-[16px] font-satoshi font-medium text-black w-[218px] h-[52px]'>
+                    <div className='flex mt-8 items-center justify-center'>
+                        <button className='text-center text-[16px] font-satoshi font-medium border border-gray-200 rounded-full text-black w-[218px] h-[52px]'>
                             View All
                         </button>
                     </div>
