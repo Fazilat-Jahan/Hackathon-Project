@@ -8,10 +8,10 @@ const Categories = () => {
             <div className='md:w-[1440px] w-full h-auto my-20 py-20 m-auto'>
 
                 {/* New Arrivals Cards */}
-                <div id='newArrivals' className='mt-10 justify-center items-center'>
+                <div id='newArrivals' className='mt-14 justify-center items-center'>
                     <h1 className=' text-center md:text-5xl text-[32px] font-integral font-bold text-black mb-10'>New Arrivals</h1>
 
-                    <div className='grid grid-cols-2 md:grid-cols-4 md:space-x-4 gap-10 px-2 items-center justify-between md:mx-4 mx-auto '>
+                    <div className='grid grid-cols-2 md:grid-cols-4 md:space-x-4 gap-10  items-center justify-between md:mx-4 mx-auto '>
                         {/* card1 */}
                         <div className='p-0.5'>
                             <div className='bg-gray-100 place-items-center'>

@@ -40,6 +40,7 @@ export default function Home() {
 
 
           <ul className="hidden md:flex gap-6 font-medium text-base font-satoshi">
+          <Link href="/"><li>Home</li></Link>
             <Link href="/browseStyles"><li>Shop</li></Link>
             <Link href="/productSelection"> <li>On Sale</li></Link>
             <Link href="#newArrivals"> <li>New Arrival</li></Link>
@@ -64,6 +65,7 @@ export default function Home() {
         {menuOpen && (
           <div className="bg-white shadow-md p-4 md:hidden">
             <ul className="flex flex-col gap-4 font-medium text-base font-satoshi">
+            <Link href="/"><li>Home</li></Link>
               <Link href="/browseStyles"><li>Shop</li></Link>
               <Link href="/productSelection"> <li>On Sale</li></Link>
               <Link href="#newArrivals"> <li>New Arrival</li></Link>
