@@ -36,13 +36,13 @@ export default function CartPage() {
                                         <p className="font-bold md:text-2xl text-xl md:mt-3">$145</p>
                                     </div>
                                 </div>
-                                <div className="flex flex-col justify-between md:h-[124px] h-[57px]">
+                                <div className="flex flex-col justify-between md:h-[124px] h-[57px] space-y-8">
                                     <button
                                         className="text-red-500 hover:text-red-700 ml-auto"
                                         aria-label="Delete item">
                                         <AiFillDelete size={24} className='w-5 h-5 md:h-6 md:w-6' />
                                     </button>
-                                    <div className="flex font-satoshi font-medium text-black md:w-[126px] w-[105px] h-[32px] md:h-[44px] justify-between items-center border rounded-full text-sm bg-gray-200 px-5 py-3 ">
+                                    <div className="flex font-satoshi font-medium text-black md:w-[126px] w-[70px] px-2 h-[32px] md:h-[44px] justify-between items-center border rounded-full text-sm bg-gray-200 md:px-5   py-3 ">
                                         <button>-</button>
                                         <span>1</span>
                                         <button>+</button>
@@ -65,13 +65,13 @@ export default function CartPage() {
                                         <p className="font-bold md:text-2xl text-xl md:mt-3">$180</p>
                                     </div>
                                 </div>
-                                <div className="flex flex-col justify-between md:h-[124px] h-[57px]">
+                                <div className="flex flex-col justify-between md:h-[124px] h-[57px] space-y-8">
                                     <button
                                         className="text-red-500 hover:text-red-700 ml-auto"
                                         aria-label="Delete item">
                                         <AiFillDelete size={24} className='w-5 h-5 md:h-6 md:w-6' />
                                     </button>
-                                    <div className="flex font-satoshi font-medium text-black md:w-[126px] w-[105px] h-[32px] md:h-[44px] justify-between items-center border rounded-full text-sm bg-gray-200 px-5 py-3 ">
+                                    <div className="flex font-satoshi font-medium text-black md:w-[126px] w-[70px] px-2  h-[32px] md:h-[44px] justify-between items-center border rounded-full text-sm bg-gray-200 md:px-5 py-3 ">
                                         <button>-</button>
                                         <span>1</span>
                                         <button>+</button>
@@ -95,13 +95,13 @@ export default function CartPage() {
                                         <p className="font-bold md:text-2xl text-xl md:mt-3">$240</p>
                                     </div>
                                 </div>
-                                <div className="flex flex-col justify-between md:h-[124px] h-[57px]">
+                                <div className="flex flex-col justify-between md:h-[124px] h-[57px] space-y-8">
                                     <button
                                         className="text-red-500 hover:text-red-700 ml-auto"
                                         aria-label="Delete item">
                                         <AiFillDelete size={24} className='w-5 h-5 md:h-6 md:w-6' />
                                     </button>
-                                    <div className="flex font-satoshi font-medium text-black md:w-[126px] w-[105px] h-[32px] md:h-[44px] justify-between items-center border rounded-full text-sm bg-gray-200 px-5 py-3 ">
+                                    <div className="flex font-satoshi font-medium text-black md:w-[126px] w-[70px] px-2  h-[32px] md:h-[44px] justify-between items-center border rounded-full text-sm bg-gray-200 md:px-5 py-3 ">
                                         <button>-</button>
                                         <span>1</span>
                                         <button>+</button>
