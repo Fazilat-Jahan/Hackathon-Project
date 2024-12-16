@@ -15,9 +15,9 @@ const ProductPage = () => {
 
     return (
 
-        <div>
+        <div className="h-screen w-screen">
             <Header/>
-            <div className=" py-[72px] md:py-[150px]">
+            <div className=" py-[100px] md:py-[150px]">
                 
             <nav className="text-sm text-gray-500 mb-2 px-6">
                 <a href="/" className="hover:underline">Home</a> &gt;{" "}
@@ -29,7 +29,7 @@ const ProductPage = () => {
 
             
 
-            <div className="flex flex-col md:flex-row p-6 gap-8 font-satoshi">
+            <div className="flex flex-col md:flex-row p-6 gap-8 font-satoshi ">
 
                 {/* Left Section: Sidebar */}
                 <div className="w-full md:w-[295px] bg-gray-50 px-6 rounded-lg space-y-6">
@@ -317,13 +317,13 @@ const ProductPage = () => {
                     </button>
 
                     <div className="flex items-center gap-1">
-                        <button className="md:px-4 px-2 py-2 hover:bg-gray-100 rounded">1</button>
-                        <button className="md:px-4 px-2 py-2 hover:bg-gray-100 rounded">2</button>
+                        <button className="md:px-4 px-1.5 py-2 hover:bg-gray-100 rounded">1</button>
+                        <button className="md:px-4 px-1.5 py-2 hover:bg-gray-100 rounded">2</button>
                         <button className="px-4 py-2 hover:bg-gray-100 rounded hidden md:block">3</button>
                         <span className="px-2">...</span>
                         <button className="px-4 py-2 hover:bg-gray-100 rounded hidden md:block">8</button>
-                        <button className="md:px-4 px-2 py-2 hover:bg-gray-100 rounded">9</button>
-                        <button className="md:px-4 px-2 py-2 hover:bg-gray-100 rounded">10</button>
+                        <button className="md:px-4 px-1.5 py-2 hover:bg-gray-100 rounded">9</button>
+                        <button className="md:px-4 px-1.5 py-2 hover:bg-gray-100 rounded">10</button>
                     </div>
 
                     <button className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-black rounded-lg border ">
