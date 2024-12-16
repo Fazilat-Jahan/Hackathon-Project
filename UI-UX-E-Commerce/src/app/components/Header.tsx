@@ -45,7 +45,7 @@ export default function Home() {
           </ul>
 
 
-          <div className="hidden md:flex items-center gap-3 bg-slate-200 w-[577px] h-[48px] py-[7px] pr-3 pl-5 text-gray-500 rounded-full">
+          <div className="hidden md:flex items-center gap-3 bg-slate-200 w-[500px] h-[48px] py-[7px] pr-3 pl-5 text-gray-500 rounded-full">
             <MagnifyingGlassIcon className="h-6 w-6" />
             <h1 className="text-xs font-thin font-satoshi">Search For Products</h1>
           </div>

@@ -10,7 +10,7 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="bg-white md:w-[1440px] max-h-screen max-w-screen-sm">
+    <div className="bg-white md:w-[1440px] h-screen w-screen">
       {/* Header */}
       <header className="fixed top-0 left-0 flex md:w-[1440px] w-full h-[34px] md:h-[38px] bg-black items-center z-50">
         <div className="flex w-full md:w-[859px] mx-auto text-white items-center">
@@ -48,7 +48,7 @@ export default function Home() {
           </ul>
 
 
-          <div className="hidden md:flex items-center gap-3 bg-slate-200 w-[577px] h-[48px] py-[7px] pr-3 pl-5 text-gray-500 rounded-full">
+          <div className="hidden md:flex items-center gap-3 bg-slate-200 w-[500px] h-[48px] py-[7px] pr-3 pl-5 text-gray-500 rounded-full">
             <MagnifyingGlassIcon className="h-6 w-6" />
             <h1 className="text-xs font-thin font-satoshi">Search For Products</h1>
           </div>

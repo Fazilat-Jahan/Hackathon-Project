@@ -20,7 +20,7 @@ export default function CartPage() {
 
                     <div className="flex flex-col md:flex-row gap-8 items-start justify-center">
                         {/* Left Section: Cart Items */}
-                        <div className="flex-1 md:w-[715px] w-4/5 h-4/5 md:h-[508px] bg-white md:p-6 p-[14px] rounded-3xl shadow border border-gray-300">
+                        <div className="flex-1 md:w-[715px] w-full h-4/5 md:h-[508px] bg-white md:p-6 p-[14px] rounded-3xl shadow border border-gray-300">
                             {/* Item 1 */}
                             <div className="flex items-center justify-between border-b pb-4 mb-4">
                                 <div className="flex items-start gap-4">
@@ -112,7 +112,7 @@ export default function CartPage() {
                         </div>
 
                         {/* Right Section: Order Summary */}
-                        <div className=" md:w-[358px] md:h-[390px] w-4/5 h-4/5 bg-white md:p-6 p-5 rounded-3xl shadow border md:space-y-6 space-y-4 items-center justify-center border-gray-300">
+                        <div className=" md:w-[358px] md:h-[450px] w-full h-4/5 bg-white md:p-6 p-5 rounded-3xl shadow border md:space-y-6 space-y-4 items-center justify-center border-gray-300">
                             <h3 className="md:text-2xl text-xl font-satoshi font-bold mb-4">Order Summary</h3>
                             <div className='md:space-y-6 space-y-4'>
                                 <div className="flex justify-between md:text-xl text-base font-medium font-satoshi">
