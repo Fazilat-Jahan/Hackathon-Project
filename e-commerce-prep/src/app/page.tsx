@@ -2,6 +2,9 @@ import { MagnifyingGlassIcon, HeartIcon, ShoppingCartIcon } from "@heroicons/rea
 import HeroSection from "./components/HeroSection";
 import LPCards from "./components/LPCards";
 import Categories from "./components/Categories";
+import NewArrivals from "./components/new-arrivals";
+import Products from "./components/explore-products";
+import Footer from "./components/site-footer";
 
 export default function Home() {
   return (
@@ -43,6 +46,20 @@ export default function Home() {
       <HeroSection />
       <LPCards/>
       <Categories/>
+      <main className="mx-auto max-w-7xl px-4 py-8">
+        <section className="space-y-6">
+          
+          <Products />
+        </section>
+        <section className="mt-12">
+        <NewArrivals /> 
+        </section>
+       
+      </main>
+      <section className="mt-12">
+      <Footer /> 
+        </section>
+      
 
     </div>);
 }
