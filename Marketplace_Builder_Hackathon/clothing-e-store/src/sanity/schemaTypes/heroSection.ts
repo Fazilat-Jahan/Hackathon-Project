@@ -1,8 +1,7 @@
-// /schemas/heroImage.js
 import { defineType } from 'sanity';
 
 export default defineType({
-  name: 'heroSection-Landing-Image',
+  name: 'landingImage', // Changed to match the query
   title: 'HeroSection Landing Image',
   type: 'document',
   fields: [
@@ -10,28 +9,21 @@ export default defineType({
       name: 'image',
       title: 'Image',
       type: 'image',
+      options: {
+        hotspot: true,
+      },
     },
     {
       name: 'title',
       title: 'Title',
       type: 'string',
     },
+    {
+      name: 'isDesktop',
+      title: 'Is Desktop Image',
+      type: 'boolean',
+      description: 'Check if this is the desktop version of the image'
+    }
   ],
-  
 });
-    // {
-    //   name: 'subtitle',
-    //   title: 'Subtitle',
-    //   type: 'string',
-    // },
-    // {
-    //   name: 'buttonText',
-    //   title: 'Button Text',
-    //   type: 'string',
-    // },
-    // {
-    //   name: 'buttonLink',
-    //   title: 'Button Link',
-    //   type: 'url',
-    // },
-  
+

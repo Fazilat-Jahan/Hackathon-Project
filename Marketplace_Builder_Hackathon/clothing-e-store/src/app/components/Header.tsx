@@ -1,17 +1,16 @@
+
 'use client';
 import { MagnifyingGlassIcon, UserCircleIcon, ShoppingCartIcon, Bars3Icon, } from '@heroicons/react/24/outline';
 import { useState } from 'react';
-import HeroSection from './components/HeroSection';
-import Categories from './components/Categories';
-import Footer from './components/Footer';
+import Link from 'next/link';
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="bg-white w-full h-max">
+    <div className="bg-white w-full md:w-full max-h-screen">
       {/* Header */}
-      <header className="fixed top-0 left-0 flex  w-full h-[34px] md:h-[38px] bg-black items-center z-50">
+      <header className="fixed top-0 left-0 flex md:w-full w-full h-[34px] md:h-[38px] bg-black items-center z-50">
         <div className="flex w-full md:w-[859px] mx-auto text-white items-center">
           <div className="flex font-light font-satoshi text-xs md:text-sm w-full text-center justify-center">
             Sign up and get 20% off your first order.
@@ -22,7 +21,7 @@ export default function Home() {
       </header>
 
       {/* Navbar */}
-      <nav className="fixed top-[34px] md:top-[38px] left-0 w-full bg-white shadow-md z-40">
+      <nav className="fixed top-[34px] md:top-[38px] md:w-[1440px] left-0 w-full bg-white shadow-md z-40">
         <div className="flex items-center justify-between px-4 py-2 w-full md:w-[1240px] mx-auto">
 
           <div className="md:hidden">
@@ -39,14 +38,15 @@ export default function Home() {
 
 
           <ul className="hidden md:flex gap-6 font-medium text-base font-satoshi">
-            <li>Shop</li>
-            <li>On Sale</li>
-            <li>New Arrival</li>
-            <li>Brands</li>
+            <Link href="/"><li>Home</li></Link>
+            <Link href="/products"><li>Shop</li></Link>
+            {/* <Link href="/productSelection"> <li>On Sale</li></Link>
+            <Link href="#newArrivals"> <li>New Arrival</li></Link>
+            <Link href="#brandStyles"> <li>Brands</li></Link> */}
           </ul>
 
 
-          <div className="hidden md:flex items-center gap-3 bg-slate-200 w-[577px] h-[48px] py-[7px] pr-3 pl-5 text-gray-500 rounded-full">
+          <div className="hidden md:flex items-center gap-3 bg-slate-200 w-[500px] h-[48px] py-[7px] pr-3 pl-5 text-gray-500 rounded-full">
             <MagnifyingGlassIcon className="h-6 w-6" />
             <h1 className="text-xs font-thin font-satoshi">Search For Products</h1>
           </div>
@@ -54,7 +54,7 @@ export default function Home() {
 
           <div className="flex items-center gap-3">
             <MagnifyingGlassIcon className="h-6 w-6 md:hidden" />
-            <ShoppingCartIcon className="h-6 w-6" />
+            <Link href={"/Cart"}> <ShoppingCartIcon className="h-6 w-6" /> </Link>
             <UserCircleIcon className="h-6 w-6" />
           </div>
         </div>
@@ -63,24 +63,18 @@ export default function Home() {
         {menuOpen && (
           <div className="bg-white shadow-md p-4 md:hidden">
             <ul className="flex flex-col gap-4 font-medium text-base font-satoshi">
-              <li>Shop</li>
-              <li>On Sale</li>
-              <li>New Arrival</li>
-              <li>Brands</li>
+              <Link href="/"><li>Home</li></Link>
+              <Link href="/browseStyles"><li>Shop</li></Link>
+              {/* <Link href="/productSelection"> <li>On Sale</li></Link> */}
+              {/* <Link href="#newArrivals"> <li>New Arrival</li></Link>
+              <Link href="#brandStyles"> <li>Brands</li></Link> */}
             </ul>
           </div>
         )}
       </nav>
 
-      {/* Main Content */}
-      <main className=" py-[72px] md:py-[76px]">
-        <HeroSection/>
-        
-        <Categories/>
-        <Footer/>
-      </main>
-      
-
     </div>
   );
 }
+
+
