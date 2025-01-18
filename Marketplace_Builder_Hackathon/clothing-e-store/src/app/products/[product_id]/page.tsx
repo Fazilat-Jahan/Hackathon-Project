@@ -4,6 +4,7 @@ import { urlFor } from '@/sanity/lib/image'
 import Image from 'next/image'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
+import Link from 'next/link'
 
 // Type definition for Product
 type Product = {
@@ -31,9 +32,15 @@ const ProductPage = async ({ params }: { params: { product_id: string } }) => {
 
   return (
     <div>
-      <Header />
-      <div className="product-detail  py-[72px] md:py-[130px] items-center justify-center flex flex-col md:w-3/4 w-full">
-      <h1 className="text-xl font-bold">{product.name}</h1>
+      <Header /><h1 className='pt-[90px] md:pt-[130px] mx-4'> 
+        
+      <Link href="/"><span>Home</span></Link> 
+      &nbsp; &gt;&gt; &nbsp;<Link href="/products"><span>All Products</span></Link> 
+     &nbsp; &gt;&gt; &nbsp;{product.name}</h1>
+
+      <div className="product-detail items-center justify-center flex flex-col md:flex-row md:w-full md:my-4">
+      <div className='flex flex-col md:w-1/2 items-center '>
+      <h1 className="md:text-2xl  text-base font-bold p-2">{product.name}</h1>
         <div className="product-detail-image">
           <Image
             src={urlFor(product.image).url() || '/placeholder.svg'}
@@ -43,9 +50,12 @@ const ProductPage = async ({ params }: { params: { product_id: string } }) => {
             className="w-[400px] h-[400px]"
           />
         </div>
-        <div className="product-detail-info">
+        </div>
+
+        <div className='flex flex-col md:w-1/2 items-center border border-black rounded-md px-4'>
+        <div className="product-detail-info text-base text-justify">
           
-          <p>{product.description}</p>
+          <p>{product.description}</p> <br />
           <p>Price: ${product.price}</p>
           <p>Category: {product.category}</p>
           <p>Discount: {product.discountPercent}%</p>
@@ -67,6 +77,7 @@ const ProductPage = async ({ params }: { params: { product_id: string } }) => {
               ))}
             </ul>
           </div>
+        </div>
         </div>
       </div>
       <Footer />

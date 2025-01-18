@@ -42,7 +42,7 @@ const HeroSection = async () => {
             Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.
           </h2>
 
-          <Link href={"/browseStyles"}> 
+          <Link href={"/products"}> 
             <button className='md:w-[210px] w-[358px] h-[52px] md:mt-6 rounded-full bg-black text-center py-3 font-satoshi text-white justify-center items-center text-[16px] mt-4'>
               Shop Now
             </button> 
