@@ -1,88 +1,88 @@
-// /src/app/products/[product_id]/page.tsx
-import { client } from '@/sanity/lib/client'
-import { urlFor } from '@/sanity/lib/image'
-import Image from 'next/image'
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
-import Link from 'next/link'
+'use client'
 
-// Type definition for Product
-type Product = {
-  _id: string
-  name: string
-  price: number
-  description: string
-  image: {
-    asset: {
-      url: string
+import { useState, useEffect } from "react"
+import { useCart } from "../../Contexts/CartContext"
+import { HeartIcon } from "@heroicons/react/24/outline"
+import { useWishlist } from "../../Contexts/WishlistContext"
+import { client } from "@/sanity/lib/client"
+import { urlFor } from "@/sanity/lib/image"
+import Image from "next/image"
+
+export default function ProductDetail({ params }: { params: { product_id: string } }) {
+  const { addToCart } = useCart()
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist()
+
+  const [product, setProduct] = useState<any>(null)
+
+  useEffect(() => {
+    console.log("Params received:", params) // Debug params
+    if (!params.product_id) return
+
+    const fetchProduct = async () => {
+      try {
+        const productData = await client.fetch(
+          `*[_type == "products" && _id == $_id][0]`, // Updated query
+          { _id: params.product_id } // Use _id for filtering
+        )
+        console.log("Fetched product data:", productData) // Debug fetched data
+        setProduct(productData)
+      } catch (error) {
+        console.error("Error fetching product data:", error) // Debug errors
+      }
     }
-  }
-  category: string
-  discountPercent: number
-  new: boolean
-  colors: string[]
-  sizes: string[]
-}
 
-// Server Component fetching data
-const ProductPage = async ({ params }: { params: { product_id: string } }) => {
-  // Fetch data directly in the component
-  const query = `*[_type == "products" && _id == $product_id][0]`
-  const product: Product = await client.fetch(query, { product_id: params.product_id })
+    fetchProduct()
+  }, [params.product_id])
+
+  if (!product) return <div>Loading...</div>
 
   return (
-    <div>
-      <Header /><h1 className='pt-[90px] md:pt-[130px] mx-4'> 
-        
-      <Link href="/"><span>Home</span></Link> 
-      &nbsp; &gt;&gt; &nbsp;<Link href="/products"><span>All Products</span></Link> 
-     &nbsp; &gt;&gt; &nbsp;{product.name}</h1>
-
-      <div className="product-detail items-center justify-center flex flex-col md:flex-row md:w-full md:my-4">
-      <div className='flex flex-col md:w-1/2 items-center '>
-      <h1 className="md:text-2xl  text-base font-bold p-2">{product.name}</h1>
-        <div className="product-detail-image">
-          <Image
-            src={urlFor(product.image).url() || '/placeholder.svg'}
-            alt={product.name}
-            width={400}
-            height={400}
-            className="w-[400px] h-[400px]"
-          />
-        </div>
-        </div>
-
-        <div className='flex flex-col md:w-1/2 items-center border border-black rounded-md px-4'>
-        <div className="product-detail-info text-base text-justify">
-          
-          <p>{product.description}</p> <br />
-          <p>Price: ${product.price}</p>
-          <p>Category: {product.category}</p>
-          <p>Discount: {product.discountPercent}%</p>
-          <p>New Arrival: {product.new ? 'Yes' : 'No'}</p>
-
-          <div>
-            <p>Colors:</p>
-            <ul>
-              {product.colors.map((color, index) => (
-                <li key={index}>{color}</li>
-              ))}
-            </ul>
+    <div className="p-6">
+      <div className="max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div className="relative h-80 w-full">
+            <Image
+              src={product?.image ? urlFor(product.image).url() : "/placeholder.svg"}
+              alt={product?.name || "Product Image"}
+              className="object-contain h-full w-full"
+              width={500}
+              height={500}
+            />
           </div>
           <div>
-            <p>Sizes:</p>
-            <ul>
-              {product.sizes.map((size, index) => (
-                <li key={index}>{size}</li>
-              ))}
-            </ul>
+            <h2 className="text-3xl font-semibold mb-4">{product?.name}</h2>
+            <p className="text-lg text-gray-600 mb-4">{product?.description}</p>
+            <div className="flex items-center gap-4">
+              <span className="text-xl font-bold">${product?.price}</span>
+              {product?.discountPercent > 0 && (
+                <span className="text-sm text-green-600">-{product.discountPercent}%</span>
+              )}
+            </div>
+            <div className="mt-4 flex gap-4">
+              <button
+                onClick={() => addToCart(product)}
+                className="bg-black text-white py-2 px-4 rounded hover:bg-gray-800"
+              >
+                Add to Cart
+              </button>
+              <button
+                onClick={() => {
+                  isInWishlist(product._id)
+                    ? removeFromWishlist(product._id)
+                    : addToWishlist(product)
+                }}
+                className="bg-white border border-black text-black p-2 rounded hover:bg-gray-100"
+              >
+                <HeartIcon
+                  className={`h-5 w-5 ${
+                    isInWishlist(product._id) ? "text-red-500 fill-red-500" : "text-black"
+                  }`}
+                />
+              </button>
+            </div>
           </div>
-        </div>
         </div>
       </div>
-      <Footer />
     </div>
   )
 }
-
-export default ProductPage
