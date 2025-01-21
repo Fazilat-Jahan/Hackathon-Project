@@ -1,4 +1,4 @@
- "use client"
+"use client"
 
 import { useEffect, useState } from "react"
 import Image from "next/image"
@@ -6,7 +6,7 @@ import Link from "next/link"
 import { HeartIcon } from "@heroicons/react/24/outline"
 import { useCart } from "../Contexts/CartContext"
 import { useWishlist } from "../Contexts/WishlistContext"
-import { client } from "@/sanity/lib/client" 
+import { client } from "@/sanity/lib/client"
 import { urlFor } from "@/sanity/lib/image"
 export default function ProductCard() {
   const [products, setProducts] = useState<any[]>([])
@@ -36,7 +36,7 @@ export default function ProductCard() {
   }
 
   return (
-    <div>
+    <div className="md:py-20 py-10">
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4 ">
       {products.map((product) => (
         <div key={product._id} className="bg-white rounded-lg shadow-md overflow-hidden relative">
@@ -46,11 +46,11 @@ export default function ProductCard() {
             </span>
 
             <div className="relative h-64 w-full">
-              <Image 
-                src={urlFor(product.image).url() || "/placeholder.svg"} 
-                alt={product.name} 
-                layout="fill" 
-                className="object-fill" 
+              <Image
+                src={urlFor(product.image).url() || "/placeholder.svg"}
+                alt={product.name}
+                layout="fill"
+                className="object-fill"
               />
             </div>
             <div className="p-4">

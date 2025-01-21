@@ -15,32 +15,37 @@ export default function ProductDetail({ params }: { params: { product_id: string
   const [product, setProduct] = useState<any>(null)
 
   useEffect(() => {
-    console.log("Params received:", params) // Debug params
-    if (!params.product_id) return
+    // Ensure the code runs on the client side
+    if (typeof window !== 'undefined') {
+      console.log("Params received:", params) // Debug params
 
-    const fetchProduct = async () => {
-      try {
-        const productData = await client.fetch(
-          `*[_type == "products" && _id == $_id][0]`, // Updated query
-          { _id: params.product_id } // Use _id for filtering
-        )
-        console.log("Fetched product data:", productData) // Debug fetched data
-        setProduct(productData)
-      } catch (error) {
-        console.error("Error fetching product data:", error) // Debug errors
+      if (!params?.product_id) return
+
+      const fetchProduct = async () => {
+        try {
+          const productData = await client.fetch(
+            `*[_type == "products" && _id == $_id][0]`, // Updated query to get product by _id
+            { _id: params.product_id } // Passing params.product_id to the query
+          )
+          console.log("Fetched product data:", productData) // Debug fetched data
+          setProduct(productData)
+        } catch (error) {
+          console.error("Error fetching product data:", error) // Debug errors
+        }
       }
-    }
 
-    fetchProduct()
-  }, [params.product_id])
+      fetchProduct()
+    }
+  }, [params?.product_id]) // Adding params.product_id as dependency
 
   if (!product) return <div>Loading...</div>
 
   return (
-    <div className="p-6">
+    <div className="px-6 md:py-16 py-10">
       <div className="max-w-4xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-          <div className="relative h-80 w-full">
+          <div className="relative h-80 w-full flex-col items-center justify-center text-center">
+            <h3 className="text-lg text-gray-600 mb-4 font-bold">Category: {product?.category} </h3>
             <Image
               src={product?.image ? urlFor(product.image).url() : "/placeholder.svg"}
               alt={product?.name || "Product Image"}

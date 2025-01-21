@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { client } from '@/sanity/lib/client';
@@ -26,15 +26,15 @@ const HeroSection = async () => {
   ];
 
   return (
-    <div>
-      <section className='md:relative md:w-full w-full md:h-[663px] h-[853px] pb-10'>
-        <div className='md:absolute inset-0 flex flex-col justify-start md:px-24 px-4 md:py-24 pt-12 z-10'>
-          <h1 className='font-integral md:text-[64px] text-4xl font-bold leading-none'>
+    <div className='py-10 overflow-hidden '>
+      <section className='md:relative md:w-full w-full md:h-[663px] h-[853px] '>
+        <div className='md:absolute inset-0 flex flex-col justify-start md:px-24 px-4 md:py-14 pt-12 z-10'>
+          <h1 className='font-integral md:text-6xl text-4xl font-bold leading-none'>
             FIND CLOTHES<br />
             THAT MATCHES<br />
             YOUR STYLE
           </h1>
-          <h2 className='hidden md:block font-satoshi font-medium md:text-[16px] text-sm mt-4'>
+          <h2 className='hidden md:block font-satoshi font-medium md:text-[14px] text-sm mt-4'>
             Browse through our diverse range of meticulously crafted garments, designed<br />
             to bring out your individuality and cater to your sense of style.
           </h2>
@@ -43,13 +43,13 @@ const HeroSection = async () => {
           </h2>
 
           <Link href={"/products"}> 
-            <button className='md:w-[210px] w-[358px] h-[52px] md:mt-6 rounded-full bg-black text-center py-3 font-satoshi text-white justify-center items-center text-[16px] mt-4'>
+            <button className='md:mt-6 rounded-full bg-black text-center py-3 px-10 font-satoshi text-white justify-center items-center flex text-[16px] mt-4'>
               Shop Now
             </button> 
           </Link>
 
           {/* stats */}
-          <div className='mt-6 md:hidden flex flex-col items-center justify-center font-satoshi text-black'>
+          <div className='mt-6  flex flex-col items-center justify-center md:justify-start md:items-start font-satoshi text-black'>
             <div className='flex space-x-8'>
               <div className='flex flex-col items-center'>
                 <span className='text-2xl font-bold'>200+</span>
@@ -60,20 +60,20 @@ const HeroSection = async () => {
                 <p className='text-xs font-medium'>High-Quality Products</p>
               </div>
             </div>
-            <div className='flex flex-col items-center p-2'>
+            <div className='flex flex-col items-center justify-center p-2 md:p-4'>
               <span className='text-2xl font-bold'>30000+</span>
               <p className='text-xs font-medium'>Happy Customers</p>
             </div>
           </div>
         </div>
 
-        <div className='justify-center md:w-full items-center w-[400px]'>
+        <div className='justify-center items-center '>
           {desktopImage && (
             <Image
-              src={urlFor(desktopImage.image).width(1400).url() || "/placeholder.svg"}
-              alt={desktopImage.title || 'Winter Collection Desktop'}
+              src={urlFor(desktopImage.image).url() || "/placeholder.svg"}
+              alt={desktopImage.title || 'Winter Collection'}
               width={1400}
-              height={663}
+              height={500}
               className="z-0 hidden md:block"
               priority
             />
@@ -82,7 +82,7 @@ const HeroSection = async () => {
           {mobileImage && (
             <Image
               src={urlFor(mobileImage.image).width(390).url() || "/placeholder.svg"}
-              alt={mobileImage.title || 'Winter Collection Mobile'}
+              alt={mobileImage.title || 'Winter Collection'}
               width={390}
               height={448}
               className="z-0 md:hidden sm:block w-full"

@@ -1,6 +1,7 @@
 "use client"
 
 import { createContext, useContext, useState } from "react"
+import { toast } from "react-hot-toast"
 import type { Product } from "../types/Product"
 
 interface CartItem extends Product {
@@ -30,31 +31,37 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       const existingItem = currentItems.find((item) => item._id === product._id)
 
       if (existingItem) {
-        return currentItems.map((item) => (item._id === product._id ? { ...item, quantity: item.quantity + 1 } : item))
+        toast.success("Updated quantity in the cart")
+        return currentItems.map((item) =>
+          item._id === product._id ? { ...item, quantity: item.quantity + 1 } : item
+        )
       }
 
+      toast.success("Added to cart")
       return [...currentItems, { ...product, quantity: 1 }]
     })
   }
 
   const removeFromCart = (productId: string) => {
     setItems((currentItems) => currentItems.filter((item) => item._id !== productId))
+    toast.success("Removed from cart")
   }
 
   const updateQuantity = (productId: string, quantity: number) => {
     setItems((currentItems) =>
       currentItems
         .map((item) => (item._id === productId ? { ...item, quantity: Math.max(0, quantity) } : item))
-        .filter((item) => item.quantity > 0),
+        .filter((item) => item.quantity > 0)
     )
+    toast.success("Updated quantity")
   }
 
   const clearCart = () => {
     setItems([])
+    toast.success("Cart cleared")
   }
 
   const searchProducts = async (query: string) => {
-    // This should be replaced with an actual API call to your Sanity backend
     const response = await fetch(`/api/search?query=${query}`)
     const results = await response.json()
     setSearchResults(results)
@@ -89,4 +96,3 @@ export function useCart() {
   }
   return context
 }
-

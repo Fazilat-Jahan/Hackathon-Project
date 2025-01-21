@@ -1,7 +1,6 @@
 "use client"
 import {
   MagnifyingGlassIcon,
-  UserCircleIcon,
   ShoppingCartIcon,
   Bars3Icon,
   HeartIcon,
@@ -21,69 +20,68 @@ export default function Header() {
   }
 
   return (
-    <div className="bg-white w-full md:w-full max-h-screen">
-      {/* Header */}
-      <header className="fixed top-0 left-0 flex md:w-full w-full h-[34px] md:h-[38px] bg-black items-center z-50">
-        <div className="flex w-full md:w-[859px] mx-auto text-white items-center">
-          <div className="flex font-light font-satoshi text-xs md:text-sm w-full text-center justify-center">
-            Sign up and get 20% off your first order.
-            <span className="font-semibold px-2 underline">Sign Up Now</span>
-          </div>
-          <div className="hidden md:block text-sm font-light font-satoshi">X</div>
-        </div>
-      </header>
-
+    <div className="bg-white w-full">
       {/* Navbar */}
-      <nav className="fixed top-[34px] md:top-[38px] md:w-[1440px] left-0 w-full bg-white shadow-md z-40">
-        <div className="flex items-center justify-between px-4 py-2 w-full md:w-[1240px] mx-auto">
+      <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-40">
+        <div className="flex items-center justify-between px-8 py-2 w-full mx-auto">
+          {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <Bars3Icon className="h-6 w-6 cursor-pointer" onClick={() => setMenuOpen(!menuOpen)} />
+            <Bars3Icon className="h-5 w-5 cursor-pointer" onClick={() => setMenuOpen(!menuOpen)} />
           </div>
 
+          {/* Logo */}
           <Link href="/">
-            <h1 className="font-bold text-[25.2px] md:text-[32px] font-integral">SHOP.CO</h1>
+            <h1 className="font-bold text-[18px] sm:text-[20px] md:text-[24px] lg:text-[26px] font-integral">SHOP.CO</h1>
           </Link>
 
-          <ul className="hidden md:flex gap-6 font-medium text-base font-satoshi">
+          {/* Desktop Menu */}
+          <ul className="hidden md:flex gap-4 font-medium text-sm sm:text-base md:text-sm font-satoshi">
             <Link href="/">
-              <li>Home</li>
+              <li className="hover:text-gray-600">Home</li>
             </Link>
             <Link href="/products">
-              <li>Shop</li>
+              <li className="hover:text-gray-600">Shop</li>
             </Link>
           </ul>
 
+          {/* Desktop Search Bar */}
           <form
             onSubmit={handleSearch}
-            className="hidden md:flex items-center gap-3 bg-slate-200 w-[500px] h-[48px] py-[7px] pr-3 pl-5 text-gray-500 rounded-full"
+            className="hidden md:flex items-center gap-2 bg-slate-200 w-[200px] sm:w-[250px] md:w-[300px] h-[30px] sm:h-[35px] px-3 rounded-full"
           >
-            <MagnifyingGlassIcon className="h-6 w-6" />
+            <MagnifyingGlassIcon className="h-5 w-5" />
             <input
               type="text"
-              placeholder="Search For Products"
-              className="bg-transparent w-full focus:outline-none text-xs font-thin font-satoshi"
+              placeholder="Search"
+              className="bg-transparent w-full focus:outline-none text-xs sm:text-sm font-thin font-satoshi"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
           </form>
 
+          {/* Icons (Cart, Wishlist, etc.) */}
           <div className="flex items-center gap-3">
-            <MagnifyingGlassIcon className="h-6 w-6 md:hidden" />
+            {/* Mobile Search Icon */}
+            <MagnifyingGlassIcon className="h-5 w-5 md:hidden" />
+
+            {/* Cart */}
             <Link href="/cart" className="relative">
-              <ShoppingCartIcon className="h-6 w-6" />
+              <ShoppingCartIcon className="h-5 w-5" />
               {totalItems > 0 && (
-                <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-xs">
                   {totalItems}
                 </span>
               )}
             </Link>
+
+            {/* Wishlist */}
             <Link href="/wishlist">
-              <HeartIcon className="h-6 w-6" />
+              <HeartIcon className="h-5 w-5" />
             </Link>
-            <UserCircleIcon className="h-6 w-6" />
           </div>
         </div>
 
+        {/* Mobile Menu */}
         {menuOpen && (
           <div className="bg-white shadow-md p-4 md:hidden">
             <ul className="flex flex-col gap-4 font-medium text-base font-satoshi">
@@ -97,10 +95,6 @@ export default function Header() {
           </div>
         )}
       </nav>
-      <div className=" py-[72px] md:py-[70px]"></div>
     </div>
-
-   
   )
 }
-

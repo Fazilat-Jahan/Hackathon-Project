@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Image from 'next/image';
 import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
@@ -14,10 +14,10 @@ const Categories = async () => {
 
     return (
         <div>
-            <div className='md:w-[1440px] w-screen my-20 py-20'>
+            <div className='w-full overflow-hidden'>
 
                 {/* New Arrivals Cards */}
-                <div id='newArrivals' className='mt-14 justify-center items-center'>
+                <div id='newArrivals' className=' justify-center items-center'>
                     <h1 className='text-center md:text-5xl text-[32px] font-integral font-bold text-black mb-10'>New Arrivals</h1>
 
                     <div className='grid grid-cols-2 md:grid-cols-4 md:space-x-4 gap-2 px-2 items-center justify-between md:mx-4 mx-auto'>
@@ -115,8 +115,8 @@ const Categories = async () => {
                 </div>
 
                   {/* browse styles */}
-                  <div id='brandStyles' className='mt-10 md:rounded-xl rounded-xl justify-center items-center bg-gray-200 md:w-[1239px] w-full md:h-[866px] h-[1100px] mx-auto'>
-                    <h1 className='text-center md:text-5xl text-[32px] font-integral font-bold text-black my-20'>Browse By Dress styles</h1>
+                  <div id='brandStyles' className='mt-10 md:rounded-xl rounded-xl justify-center items-center bg-gray-200  w-full h-fit mx-auto'>
+                    <h1 className='text-center md:text-5xl text-[32px] font-integral font-bold text-black mt-18'>Browse By Dress styles</h1>
 
                     <div className='flex flex-col sm:flex-row space-y-5 sm:space-y-0 sm:space-x-5 justify-center items-center place-items-center'>
                         {/* 1st card */}

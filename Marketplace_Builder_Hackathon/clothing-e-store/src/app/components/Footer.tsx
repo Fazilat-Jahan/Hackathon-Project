@@ -5,14 +5,16 @@ import { FaTwitter, FaGithub, FaInstagram, FaFacebook } from 'react-icons/fa';
 const Footer = () => {
     return (
         <div>
-            <div className='w-full md:w-full md:h-[589px] mx-auto flex flex-col items-center px-4'>
+            <div className='w-full mx-auto flex flex-col items-center px-4 py-8'>
 
+                {/* Footer Images */}
                 <Image src={"/footerframe.png"} alt='Footer' width={1240} height={180} className='m-5 hidden md:block' />
                 <Image src={"/mfooter.png"} alt='Footer' width={358} height={293} className='m-5 md:hidden block' />
 
-
+                {/* Footer Sections */}
                 <div className='flex flex-wrap md:flex-nowrap space-x-0 md:space-x-[120px] text-black h-auto md:h-[289px] w-full md:w-[1440px] justify-start'>
-
+                    
+                    {/* Shop.co Section */}
                     <div className='w-full md:w-[248px] mb-8 md:mb-0 text-left md:pl-8'>
                         <h1 className='font-bold text-[28.85px] md:text-[33.45px] font-integral'>SHOP.CO</h1>
                         <h2 className='pt-[15px] font-light text-[14px] font-satoshi'>
@@ -27,7 +29,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-
+                    {/* Company Section */}
                     <div className='w-1/2 md:w-[104px] mb-8 md:mb-0 text-left'>
                         <h1 className='font-bold text-[18px] font-satoshi'>Company</h1>
                         <ul className='space-y-[15px] font-light text-[16px] font-satoshi leading-[19px]'>
@@ -38,7 +40,7 @@ const Footer = () => {
                         </ul>
                     </div>
 
-
+                    {/* Help Section */}
                     <div className='w-1/2 md:w-[136px] mb-8 md:mb-0 text-left'>
                         <h1 className='font-bold text-[18px] font-satoshi'>Help</h1>
                         <ul className='space-y-[15px] font-light text-[16px] font-satoshi leading-[19px]'>
@@ -49,7 +51,7 @@ const Footer = () => {
                         </ul>
                     </div>
 
-
+                    {/* FAQ Section */}
                     <div className='w-1/2 md:w-[149px] mb-8 md:mb-0 text-left'>
                         <h1 className='font-bold text-[18px] font-satoshi'>FAQ</h1>
                         <ul className='space-y-[15px] font-light text-[16px] font-satoshi leading-[19px]'>
@@ -60,7 +62,7 @@ const Footer = () => {
                         </ul>
                     </div>
 
-
+                    {/* Resources Section */}
                     <div className='w-1/2 md:w-[149px] mb-8 md:mb-0 text-left'>
                         <h1 className='font-bold text-[18px] font-satoshi'>Resources</h1>
                         <ul className='space-y-[15px] font-light text-[16px] font-satoshi leading-[19px]'>
@@ -72,10 +74,10 @@ const Footer = () => {
                     </div>
                 </div>
 
-
+                {/* Divider Line */}
                 <div className="w-full border border-gray-300 my-4"></div>
 
-
+                {/* Footer Bottom Section */}
                 <div className='flex flex-wrap md:flex-nowrap items-center justify-between w-full md:w-[1240px]'>
                     <div className='font-medium text-[16px] font-satoshi leading-5 text-gray-400 text-left'>
                         Shop.co © 2000-2023, All Rights Reserved
