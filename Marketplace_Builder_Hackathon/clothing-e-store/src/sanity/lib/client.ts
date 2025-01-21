@@ -1,15 +1,12 @@
-import { createClient } from 'next-sanity'
-
-import { apiVersion, dataset, projectId } from '../env'
+import { createClient } from "next-sanity";
 
 export const client = createClient({
-  projectId: "fg287be1",
-  dataset: "production",
-  apiVersion:"2025-01-13",
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID, 
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,     
+  apiVersion: "2023-01-01",
   useCdn: false, 
-  token: "skAOlKaC0Ime4NW0raJLH9upZ0YyOjFSbfbgBAxPbRqGyZY87VlYoRgLe6H0Rhuo3sL8AdlpUUpAHCPPDoPOE6Zs6M03O5znXXUhrZQv5CkCOjYD3DxZjp5u28ZBxKL1DQjeN8BUFxngYeLLOjZ8WbAwxaTr5bXy4RZO7Gm30hqGrjkj5DDr",
-})
-
+  token: process.env.SANITY_API_TOKEN,               
+});
 
 export async function getProducts() {
   return client.fetch(`*[_type == "products"]{
