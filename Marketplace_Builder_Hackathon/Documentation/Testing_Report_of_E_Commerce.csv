@@ -1,0 +1,15 @@
+Test Case ID,Test Case Description,Test Steps,Expected Result,Actual Result,Status,Remarks
+,,,,,,
+TC001,Validate product listing page,Open product page > Verify products,Products displayed correctly,Products displayed correctly,Passed,No issues found
+TC002,Test API error handling,Disconnect API > Refresh page,Show fallback UI with error message,Error message shown,Passed,Handled gracefully
+TC003,Dynamic Routing,product from listing page >Verify correct product details,Correct product details displayed,Correct product details displayed ,Passed,Works as expected
+TC004,Check cart functionality,Add product to cart > Verify cart contents,Cart updates with added product,Cart updates as expected,Passed,Works as expected
+TC005,Validate wishlist ,Click on wishlist item > Verify details,Wishlist item details displayed correctly,Wishlist item details displayed correctly,Passed,No issues found
+TC006,Ensure responsiveness on mobile,Resize browser window > Check layout,Layout adjusts properly to screen size,Responsive layout working as intended,Passed,Test successful
+TC007,Validate search functionality,Enter product name > Verify results,Relevant products displayed,Relevant products displayed,Passed,Search working as expected
+TC008,Check checkout process,Add products to cart > Proceed to checkout,Order completed successfully,Order completed successfully,Passed,Checkout process verified
+TC009,Test image loading,Open product page > Check images,Images load correctly,Images load correctly,Passed,Images optimized
+TC010,Verify API response time,Send request to API > Measure response time,Response time < 2 seconds,Response time < 2 seconds,Passed,API performing efficiently
+TC011,Validate error message for invalid input,Enter invalid email in form > Submit,Error message displayed,Error message displayed,Passed,Validation messages working
+TC012,Check browser compatibility,Open website in multiple browsers > Verify layout and functionality,Consistent layout and functionality,Consistent layout and functionality,Passed,Cross-browser verified
+TC013,Test 'Shop' button functionality,Click 'Shop' button > Verify product list,All products listed successfully,All products listed successfully,Passed,Works as expected
