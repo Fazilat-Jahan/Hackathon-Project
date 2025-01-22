@@ -13,6 +13,7 @@ export const metadata = {
   description: 'Your one-stop shop for all your needs',
 }
 
+
 export default function RootLayout({
   children,
 }: {
