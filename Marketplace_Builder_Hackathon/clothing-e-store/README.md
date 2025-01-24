@@ -1,8 +1,4 @@
-Here's the refined README file with a "Connect on LinkedIn" section instead of an acknowledgment:  
-
----
-
-# E-Commerce Website Documentation  
+# Shop.Co E-Commerce
 
 ## Table of Contents  
 1. [Introduction](#introduction)  
