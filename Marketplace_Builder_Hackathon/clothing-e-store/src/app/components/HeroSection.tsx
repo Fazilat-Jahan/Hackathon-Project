@@ -97,7 +97,7 @@ const HeroSection = async () => {
 
 
         {/* Footer */}
-        <div className="bg-black md:h-[122px] h-[146px] md:w-full w-[400px] text-white flex items-center justify-center">
+        <div className="bg-black md:h-[122px] h-[146px] w-full text-white flex items-center justify-center">
           <div className="flex flex-wrap justify-center items-center md:px-12 w-full">
             {brandlogos.map((logo, index) => (
               <div className="w-1/3 md:w-1/5 p-4" key={index}>
