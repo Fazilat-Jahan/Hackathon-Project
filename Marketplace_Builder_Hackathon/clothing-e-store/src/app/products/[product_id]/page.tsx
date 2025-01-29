@@ -7,6 +7,7 @@ import { useWishlist } from "../../Contexts/WishlistContext"
 import { client } from "@/sanity/lib/client"
 import { urlFor } from "@/sanity/lib/image"
 import Image from "next/image"
+import CustomerReviews from "../../components/Reviews"
 
 export default function ProductDetail({ params }: { params: { product_id: string } }) {
   const { addToCart } = useCart()
@@ -41,7 +42,7 @@ export default function ProductDetail({ params }: { params: { product_id: string
   if (!product) return <div>Loading...</div>
 
   return (
-    <div className="px-6 md:py-16 py-10">
+    <div className="px-6 md:py-20 py-16">
       <div className="max-w-4xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           <div className="relative h-80 w-full flex-col items-center justify-center text-center">
@@ -54,7 +55,7 @@ export default function ProductDetail({ params }: { params: { product_id: string
               height={500}
             />
           </div>
-          <div>
+          <div className="py-2">
             <h2 className="text-3xl font-semibold mb-4">{product?.name}</h2>
             <p className="text-lg text-gray-600 mb-4">{product?.description}</p>
             <div className="flex items-center gap-4">
@@ -62,6 +63,15 @@ export default function ProductDetail({ params }: { params: { product_id: string
               {product?.discountPercent > 0 && (
                 <span className="text-sm text-green-600">-{product.discountPercent}%</span>
               )}
+              |
+               <h2 className='text-black md:text-sm text-[12px] font-semibold flex font-satoshi gap-1'>
+                                        <i className='fas fa-star text-yellow-400'></i>
+                                        <i className='fas fa-star text-yellow-400'></i>
+                                        <i className='fas fa-star text-yellow-400'></i>
+                                        <i className='fas fa-star text-yellow-400'></i>
+                                        <i className='fas fa-star bg-gradient-to-r from-yellow-400 to-gray-300 bg-clip-text text-transparent'></i>
+                                        <span className='px-2'> 4.5/5 </span>
+                                    </h2>
             </div>
             <div className="mt-4 flex gap-4">
               <button
@@ -88,6 +98,10 @@ export default function ProductDetail({ params }: { params: { product_id: string
           </div>
         </div>
       </div>
+<div className="py-6">
+<CustomerReviews/>
+</div>
+     
     </div>
   )
 }

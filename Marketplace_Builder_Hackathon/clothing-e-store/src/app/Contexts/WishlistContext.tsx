@@ -6,10 +6,12 @@ import { toast } from "react-hot-toast"
 
 interface WishlistContextType {
   items: Product[]
+  wishlistCount: number
   addToWishlist: (product: Product) => void
   removeFromWishlist: (productId: string) => void
   isInWishlist: (productId: string) => boolean
 }
+
 
 const WishlistContext = createContext<WishlistContextType | undefined>(undefined)
 
@@ -34,16 +36,19 @@ export default function WishlistProvider({ children }: { children: React.ReactNo
   const isInWishlist = (productId: string) => {
     return items.some((item) => item._id === productId)
   }
+  const wishlistCount = items.length
 
   return (
     <WishlistContext.Provider
-      value={{
-        items,
-        addToWishlist,
-        removeFromWishlist,
-        isInWishlist,
-      }}
-    >
+    value={{
+      items,
+      wishlistCount,
+      addToWishlist,
+      removeFromWishlist,
+      isInWishlist,
+    }}
+  >
+  
       {children}
     </WishlistContext.Provider>
   )

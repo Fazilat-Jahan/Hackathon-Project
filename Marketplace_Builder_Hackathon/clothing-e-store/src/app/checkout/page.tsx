@@ -1,44 +1,67 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { useRouter } from "next/navigation"
-import { useCart } from "../Contexts/CartContext"
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useCart } from "../Contexts/CartContext";
+import dynamic from "next/dynamic";
+import { toast } from "react-hot-toast";
+
+const DynamicComponentWithNoSSR = dynamic(
+  () => import("../components/StripePayment"),
+  { ssr: false }
+);
 
 export default function CheckoutPage() {
-  const router = useRouter()
-  const { items, totalPrice, clearCart } = useCart()
+  const router = useRouter();
+  const { items, totalPrice, clearCart } = useCart();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     address: "",
     phone: "",
     paymentMethod: "cod",
-  })
+  });
 
-  if (items.length === 0) {
-    router.push("/cart")
-    return null
-  }
+  // If the cart is empty, redirect to the cart page
+  // if (items.length === 0) {
+  //   router.push("/cart");
+  //   console.log("Redirecting to cart...");
+  //   return null;
+    
+  // } 
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Here you would typically send the order to your backend
-    console.log("Order:", { ...formData, items, totalPrice })
-    clearCart()
+    e.preventDefault();
 
-    // Show success message
-    const message = document.createElement("div")
-    message.className = "fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded shadow-lg"
-    message.textContent = "Order placed successfully!"
-    document.body.appendChild(message)
-    setTimeout(() => {
-      message.remove()
-      router.push("/")
-    }, 2000)
-  }
+    // Show toast based on the selected payment method
+    if (formData.paymentMethod === "bank") {
+      toast.success("Payment done on Bank Transfer!");
+      toast.success("Order placed successfully!");
+    } else {
+      toast.success("Order placed successfully!");
+    }
+
+      // Store the invoice data in localStorage
+  localStorage.setItem("checkoutData", JSON.stringify({
+    items, 
+    totalPrice, 
+    address: formData.address, 
+    paymentMethod: formData.paymentMethod
+  }));
+  
+    // Redirect to the invoice page with order details
+    router.push("/invoice");
+    console.log("Redirecting to invoice...");
+
+
+    // Clear the cart after placing the order
+    clearCart();
+
+    
+  };
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-12 md:py-24">
       <h1 className="text-2xl font-bold mb-8">Checkout</h1>
       <div className="grid md:grid-cols-2 gap-8">
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -49,7 +72,9 @@ export default function CheckoutPage() {
               name="name"
               required
               value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, name: e.target.value })
+              }
               className="w-full px-3 py-2 border rounded"
             />
           </div>
@@ -60,7 +85,9 @@ export default function CheckoutPage() {
               name="email"
               required
               value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
               className="w-full px-3 py-2 border rounded"
             />
           </div>
@@ -71,7 +98,9 @@ export default function CheckoutPage() {
               name="address"
               required
               value={formData.address}
-              onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, address: e.target.value })
+              }
               className="w-full px-3 py-2 border rounded"
             />
           </div>
@@ -82,7 +111,9 @@ export default function CheckoutPage() {
               name="phone"
               required
               value={formData.phone}
-              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, phone: e.target.value })
+              }
               className="w-full px-3 py-2 border rounded"
             />
           </div>
@@ -95,7 +126,9 @@ export default function CheckoutPage() {
                   name="paymentMethod"
                   value="cod"
                   checked={formData.paymentMethod === "cod"}
-                  onChange={(e) => setFormData({ ...formData, paymentMethod: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, paymentMethod: e.target.value })
+                  }
                   className="mr-2"
                 />
                 Cash on Delivery
@@ -106,15 +139,23 @@ export default function CheckoutPage() {
                   name="paymentMethod"
                   value="bank"
                   checked={formData.paymentMethod === "bank"}
-                  onChange={(e) => setFormData({ ...formData, paymentMethod: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, paymentMethod: e.target.value })
+                  }
                   className="mr-2"
                 />
                 Bank Transfer
               </label>
+              {formData.paymentMethod === "bank" && (
+                <DynamicComponentWithNoSSR />
+              )}
             </div>
           </div>
-          <button type="submit" className="w-full bg-black text-white py-2 rounded hover:bg-gray-800">
-            Place Order
+          <button
+            type="submit"
+            className="w-full bg-black text-white py-2 rounded hover:bg-gray-800"
+          >
+            {formData.paymentMethod === "bank" ? "Pay Now" : "Place Order"}
           </button>
         </form>
         <div className="bg-gray-50 p-6 rounded-lg">
@@ -138,6 +179,5 @@ export default function CheckoutPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-

@@ -4,18 +4,14 @@ import { FaTwitter, FaGithub, FaInstagram, FaFacebook } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <div>
-            <div className='w-full mx-auto flex flex-col items-center px-4 py-8'>
-
-                {/* Footer Images */}
-                <Image src={"/footerframe.png"} alt='Footer' width={1240} height={180} className='m-5 hidden md:block' />
-                <Image src={"/mfooter.png"} alt='Footer' width={358} height={293} className='m-5 md:hidden block' />
+        <div className='w-full overflow-x-hidden bg-white'>
+            <div className='w-full max-w-screen-xl mx-auto flex flex-col items-center px-4 md:px-8 py-8 border-t-4 border-black'>
 
                 {/* Footer Sections */}
-                <div className='flex flex-wrap md:flex-nowrap space-x-0 md:space-x-[120px] text-black h-auto md:h-[289px] w-full md:w-[1440px] justify-start'>
+                <div className='flex flex-wrap md:flex-nowrap space-x-0 md:space-x-[120px] text-black h-auto md:h-[289px] w-full justify-start'>
                     
                     {/* Shop.co Section */}
-                    <div className='w-full md:w-[248px] mb-8 md:mb-0 text-left md:pl-8'>
+                    <div className='w-full md:w-[248px] mb-8 md:mb-0 text-left'>
                         <h1 className='font-bold text-[28.85px] md:text-[33.45px] font-integral'>SHOP.CO</h1>
                         <h2 className='pt-[15px] font-light text-[14px] font-satoshi'>
                             We have clothes that suit your style and which you are proud to wear. From women to men.
@@ -78,7 +74,7 @@ const Footer = () => {
                 <div className="w-full border border-gray-300 my-4"></div>
 
                 {/* Footer Bottom Section */}
-                <div className='flex flex-wrap md:flex-nowrap items-center justify-between w-full md:w-[1240px]'>
+                <div className='flex flex-wrap md:flex-nowrap items-center justify-between w-full'>
                     <div className='font-medium text-[16px] font-satoshi leading-5 text-gray-400 text-left'>
                         Shop.co © 2000-2023, All Rights Reserved
                     </div>

@@ -1,27 +1,29 @@
-'use client'
+import { useRouter } from "next/navigation"
+import type React from "react"
 import { useState } from "react"
 
-export default function SearchBar({ onSearch }: { onSearch: (term: string) => void }) {
+const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("")
+
+  const router = useRouter()
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
-    onSearch(searchTerm)
+    router.push(`/products?search=${searchTerm}`)
   }
 
   return (
-    <form onSubmit={handleSearch} className="flex">
+    <form onSubmit={handleSearch}>
       <input
         type="text"
+        placeholder="Search products..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        placeholder="Search products..."
-        className="flex-grow px-4 py-2 border rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
-      <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded-r-md hover:bg-blue-600">
-        Search
-      </button>
+      <button type="submit">Search</button>
     </form>
   )
 }
+
+export default SearchBar
 

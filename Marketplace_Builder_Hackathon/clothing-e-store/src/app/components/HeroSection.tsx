@@ -12,7 +12,7 @@ const HeroSection = async () => {
     image,
     isDesktop
   }`);
-  
+
   // Separate desktop and mobile images
   const desktopImage = landingImages.find((img: any) => img.isDesktop);
   const mobileImage = landingImages.find((img: any) => !img.isDesktop);
@@ -26,10 +26,10 @@ const HeroSection = async () => {
   ];
 
   return (
-    <div className='py-10 overflow-hidden '>
+    <div className='py-6 overflow-hidden '>
       <section className='md:relative md:w-full w-full md:h-[663px] h-[853px] '>
         <div className='md:absolute inset-0 flex flex-col justify-start md:px-24 px-4 md:py-14 pt-12 z-10'>
-          <h1 className='font-integral md:text-6xl text-4xl font-bold leading-none'>
+          <h1 className='font-integral md:text-5xl text-4xl font-bold leading-none'>
             FIND CLOTHES<br />
             THAT MATCHES<br />
             YOUR STYLE
@@ -38,15 +38,16 @@ const HeroSection = async () => {
             Browse through our diverse range of meticulously crafted garments, designed<br />
             to bring out your individuality and cater to your sense of style.
           </h2>
-          <h2 className='md:hidden block font-satoshi font-medium md:text-[16px] text-sm mt-4 text-start'>
+          <h2 className='md:hidden block font-satoshi font-medium md:text-[16px] text-sm mt-4  text-justify'>
             Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.
           </h2>
 
-          <Link href={"/products"}> 
-            <button className='md:mt-6 rounded-full bg-black text-center py-3 px-10 font-satoshi text-white justify-center items-center flex text-[16px] mt-4'>
+          <Link href={"/products"}>
+            <button className='md:mt-6 md:px-10 rounded-full bg-black text-center py-2 font-satoshi text-white justify-center items-center flex text-[16px] mt-4 w-full mx-4 md:w-auto md:mx-0'>
               Shop Now
-            </button> 
+            </button>
           </Link>
+
 
           {/* stats */}
           <div className='mt-6  flex flex-col items-center justify-center md:justify-start md:items-start font-satoshi text-black'>

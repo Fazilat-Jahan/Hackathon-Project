@@ -20,7 +20,7 @@ const HeroSection = () => {
                         YOUR STYLE</h1>
                     <h2 className='hidden md:block font-satoshi font-medium md:text-[16px] text-sm mt-4'>Browse through our diverse range of meticulously crafted garments, designed<br />to bring out your individuality and cater to your sense of style.</h2>
                     <h2 className='md:hidden block font-satoshi font-medium md:text-[16px] text-sm mt-4 text-start'>Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.</h2>
-                    
+
                     <Link href={"/browseStyles"}> <button className='md:w-[210px] w-[358px] h-[52px] md:mt-6 rounded-full bg-black text-center py-3 font-satoshi text-white justify-center items-center text-[16px] mt-4'>Shop Now</button> </Link>
 
                     {/* stats */}
@@ -55,19 +55,19 @@ const HeroSection = () => {
 
                 {/* footer */}
                 <div className='bg-black md:h-[122px] md:w-[1440px] w-[400px] h-[146px] text-white items-center justify-center flex'>
-                <div className="flex flex-wrap justify-center items-center md:px-12 w-full">
-        {brandlogos.map((logo, index) => (
-          <div className="w-1/3 md:w-1/5 p-4" key={index}>
-            <Image
-              src={logo.src}
-              alt={logo.alt}
-              width={150} 
-              height={150}
-              className="object-contain"
-            />
-          </div>
-        ))}
-      </div>
+                    <div className="flex flex-wrap justify-center items-center md:px-12 w-full">
+                        {brandlogos.map((logo, index) => (
+                            <div className="w-1/3 md:w-1/5 p-4" key={index}>
+                                <Image
+                                    src={logo.src}
+                                    alt={logo.alt}
+                                    width={150}
+                                    height={150}
+                                    className="object-contain"
+                                />
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
 

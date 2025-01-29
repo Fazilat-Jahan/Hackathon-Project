@@ -2,31 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-/* Customize slider thumb to be black */
-input[type="range"]::-webkit-slider-thumb {
-  background-color: black;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  border: none;
-}
-
-input[type="range"]::-moz-range-thumb {
-  background-color: black;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  border: none;
-}
-
-/* Customize the slider track to be black */
-input[type="range"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: #000;
-  height: 2px;
-  border-radius: 10px;
-}
