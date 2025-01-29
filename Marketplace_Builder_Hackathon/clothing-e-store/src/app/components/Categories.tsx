@@ -15,7 +15,7 @@ const Categories = async () => {
 
     return (
         <div>
-            <div className='w-full overflow-hidden py-[350px] md:py-2'>
+            <div className='w-full overflow-hidden py-80 md:py-2'>
 
                 {/* New Arrivals Cards */}
                 <div id='newArrivals' className=' justify-center items-center'>
