@@ -11,7 +11,7 @@ export default function WishlistPage() {
   const { addToCart } = useCart();
 
   return (
-    <div className="px-6 py-10 md:py-20">
+    <div className="px-6 py-16 md:py-20">
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
         Your Wishlist
       </h1>
@@ -33,8 +33,8 @@ export default function WishlistPage() {
                     : "/placeholder.svg" // Fallback image
                 }
                 alt={item.name || "Product Image"}
-                width={200}
-                height={200}
+                width={100}
+                height={100}
                 className="rounded w-full h-auto object-cover"
               />
               <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mt-2">

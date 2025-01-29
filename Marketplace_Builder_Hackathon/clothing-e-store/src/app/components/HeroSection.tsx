@@ -43,9 +43,12 @@ const HeroSection = async () => {
           </h2>
 
           <Link href={"/products"}>
-            <button className='md:mt-6 md:px-10 rounded-full bg-black text-center py-2 font-satoshi text-white justify-center items-center flex text-[16px] mt-4 w-full mx-4 md:w-auto md:mx-0'>
-              Shop Now
-            </button>
+            <div className="flex justify-center md:justify-start w-full">
+              <button className="md:mt-6 md:px-10 rounded-full bg-black text-center py-2 font-satoshi text-white flex justify-center items-center text-[16px] mt-4 w-full md:w-auto px-4">
+                Shop Now
+              </button>
+            </div>
+
           </Link>
 
 
@@ -92,11 +95,12 @@ const HeroSection = async () => {
           )}
         </div>
 
-        {/* footer */}
-        <div className='bg-black md:h-[122px] md:w-full w-[400px] h-[146px] text-white items-center justify-center flex'>
-          <div className="flex flex-wrap justify-center items-center md:px-12 w-full">
+
+        {/* Footer */}
+        <div className="bg-black md:h-[122px] h-[146px] w-full text-white flex items-center justify-center overflow-hidden">
+          <div className="flex flex-wrap justify-center items-center md:px-12 px-4 w-full">
             {brandlogos.map((logo, index) => (
-              <div className="w-1/3 md:w-1/5 p-4" key={index}>
+              <div className="w-1/3 md:w-1/5 p-4 flex justify-center" key={index}>
                 <Image
                   src={logo.src || "/placeholder.svg"}
                   alt={logo.alt}
@@ -108,6 +112,9 @@ const HeroSection = async () => {
             ))}
           </div>
         </div>
+
+
+
       </section>
     </div>
   );

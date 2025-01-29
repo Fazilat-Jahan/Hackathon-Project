@@ -55,7 +55,7 @@ export default function ProductDetail({ params }: { params: { product_id: string
               height={500}
             />
           </div>
-          <div className="py-2">
+          <div className="py-4">
             <h2 className="text-3xl font-semibold mb-4">{product?.name}</h2>
             <p className="text-lg text-gray-600 mb-4">{product?.description}</p>
             <div className="flex items-center gap-4">

@@ -65,46 +65,47 @@ export default function ProductCard() {
   return (
     <div className="md:py-20 py-10">
 
-      <div className="flex justify-between md:px-4 px-2 mb-4">
-        <div>
-          <label htmlFor="category" className="mr-2">Category:</label>
-          <select
-            id="category"
-            value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}
-            className="border p-2 rounded"
-          >
-            <option value="">All Categories</option>
-            {categories.map((category) => (
-              <option key={category} value={category}>{category}</option>
-            ))}
-          </select>
-        </div>
-        <div>
-          <label htmlFor="price" className="mr-2">Price:</label>
-          <div className="w-full">
-          <Slider.Root
-            className="relative flex items-center select-none w-full h-8 min-w-[200px]"
-            value={priceRange}
-            onValueChange={(newRange) => setPriceRange(newRange as [number, number])}
-            min={0}
-            max={500}
-            step={1}
-          >
-              <Slider.Track className="bg-gray-300 relative flex-grow rounded-full h-1 w-full">
-                <Slider.Range className="absolute bg-black h-full rounded-full" />
-              </Slider.Track>
-              <Slider.Thumb className="block w-4 h-4 bg-black rounded-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-gray-200" />
-              <Slider.Thumb className="block w-4 h-4 bg-black rounded-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-gray-200" />
-            </Slider.Root>
-            <div className="flex justify-between mt-1 text-sm text-black">
-              <span>${priceRange[0]}</span>
-              <span>${priceRange[1]}</span>
-            </div>
-          </div>
-        </div>
-
+<div className="flex flex-col md:flex-row md:justify-between items-center md:items-start md:px-4 px-2 mb-4 gap-4">
+  <div className="w-full md:w-auto text-center md:text-left">
+    <label htmlFor="category" className="mr-2 font-bold">Category:</label>
+    <select
+      id="category"
+      value={selectedCategory}
+      onChange={(e) => setSelectedCategory(e.target.value)}
+      className="border p-2 rounded w-full md:w-auto bg-black text-white"
+    >
+      <option value="">All Categories</option>
+      {categories.map((category) => (
+        <option key={category} value={category}>{category}</option>
+      ))}
+    </select>
+  </div>
+  <div className="w-full md:w-auto text-center md:text-left">
+    <label htmlFor="price" className="mr-2 font-bold">Price:</label>
+    <div className="w-full max-w-xs">
+      <Slider.Root
+        className="relative flex items-center select-none w-full h-8 min-w-[200px]"
+        value={priceRange}
+        onValueChange={(newRange) => setPriceRange(newRange as [number, number])}
+        min={0}
+        max={500}
+        step={1}
+      >
+        <Slider.Track className="bg-gray-300 relative flex-grow rounded-full h-1 w-full">
+          <Slider.Range className="absolute bg-black h-full rounded-full" />
+        </Slider.Track>
+        <Slider.Thumb className="block w-4 h-4 bg-black rounded-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-gray-200" />
+        <Slider.Thumb className="block w-4 h-4 bg-black rounded-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-gray-200" />
+      </Slider.Root>
+      <div className="flex justify-between mt-1 text-sm text-black">
+        <span>${priceRange[0]}</span>
+        <span>${priceRange[1]}</span>
       </div>
+    </div>
+  </div>
+</div>
+
+
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
         {filteredProducts.map((product) => (
