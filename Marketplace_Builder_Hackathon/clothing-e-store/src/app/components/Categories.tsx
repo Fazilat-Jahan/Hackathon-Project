@@ -15,7 +15,7 @@ const Categories = async () => {
 
     return (
         <div>
-            <div className='w-full overflow-hidden py-80 md:py-2'>
+            <div className='w-full overflow-hidden py-96 md:py-2'>
 
                 {/* New Arrivals Cards */}
                 <div id='newArrivals' className=' justify-center items-center'>
@@ -123,14 +123,14 @@ const Categories = async () => {
                     <h1 className="text-center md:text-5xl text-3xl font-integral font-bold text-black mt-6">
                         Browse By Dress Styles
                     </h1>
-
+                    <Link href="/products">
                     {/* First Row */}
                     <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mt-6">
                         {/* 1st card */}
                         <div className="w-full sm:w-[407px] sm:h-[289px]">
-                            <Link href="/browseStyles">
+                          
                                 <Image src="/casual.png" alt="Casual" width={407} height={289} className="w-full h-auto object-cover rounded-lg" />
-                            </Link>
+                            
                         </div>
 
                         {/* 2nd card */}
@@ -151,6 +151,7 @@ const Categories = async () => {
                             <Image src="/gym.png" alt="Gym" width={407} height={289} className="w-full h-auto object-cover rounded-lg" />
                         </div>
                     </div>
+                    </Link>
                 </div>
 
 
