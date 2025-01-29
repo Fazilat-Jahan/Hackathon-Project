@@ -24,15 +24,16 @@ export default function CartPage() {
   }
 
   return (
-    <div className="container mx-auto px-4 md:py-24 py-16">
+    <div className="container mx-auto px-4 md:py-24 py-10">
       <h1 className="text-3xl sm:text-4xl font-bold mb-8">YOUR CART</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
         {/* Cart Items */}
         <div className="md:col-span-2">
-          {items.map((item: any) => (
+          {items.map((item:any) => (
             <div
               key={item._id}
-              className="flex flex-col sm:flex-row items-center gap-4 border-b py-4"
+              className="flex items-center gap-4 border-b py-4"
             >
               {/* Product Image */}
               <div className="relative h-24 w-24 sm:h-32 sm:w-32 flex-shrink-0 rounded-lg overflow-hidden">
@@ -40,44 +41,52 @@ export default function CartPage() {
                   src={item.image ? urlFor(item.image).url() : "/placeholder.svg"}
                   alt={item.name || "Product Image"}
                   fill
-                  className="object-fill"
+                  className="object-cover"
                 />
               </div>
 
               {/* Product Details */}
-              <div className="flex-grow mt-4 sm:mt-0">
+              <div className="flex-grow">
                 <h3 className="text-lg sm:text-xl font-semibold">{item.name}</h3>
                 <p className="font-semibold text-lg mt-1">${item.price}</p>
               </div>
 
               {/* Quantity and Remove */}
-              <div className="flex items-center space-x-2 mt-4 sm:mt-0">
-                <button
-                  onClick={() => updateQuantity(item._id, item.quantity - 1)}
-                  className="px-3 py-1 border rounded text-lg"
-                >
-                  <AiOutlineMinus />
-                </button>
-                <span className="text-lg">{item.quantity}</span>
-                <button
-                  onClick={() => updateQuantity(item._id, item.quantity + 1)}
-                  className="px-3 py-1 border rounded text-lg"
-                >
-                  <AiOutlinePlus />
-                </button>
-                <button
-                  onClick={() => removeFromCart(item._id)}
-                  className="text-red-500 text-xl ml-2"
-                >
-                  <FaTrashAlt />
-                </button>
-              </div>
+              <div className="flex items-center gap-4 md:gap-2 md:flex-row flex-col">
+  {/* Quantity Controls */}
+  <div className="flex items-center space-x-2 flex-col md:flex-row">
+    <button
+      onClick={() => updateQuantity(item._id, item.quantity - 1)}
+      className="px-3 py-1 border rounded text-lg"
+    >
+      <AiOutlineMinus />
+    </button>
+    <span className="text-lg">{item.quantity}</span>
+    <button
+      onClick={() => updateQuantity(item._id, item.quantity + 1)}
+      className="px-3 py-1 border rounded text-lg"
+    >
+      <AiOutlinePlus />
+    </button>
+  </div>
+  {/* Remove Button */}
+  <button
+    onClick={() => removeFromCart(item._id)}
+    className="text-red-500 text-xl mt-2 md:mt-0 ml-2"
+  >
+    <FaTrashAlt />
+  </button>
+</div>
+
+
+
             </div>
           ))}
         </div>
 
+
         {/* Order Summary */}
-        <div className="bg-gray-100 p-6 rounded-lg shadow-lg mt-8 sm:mt-0">
+        <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
           <h2 className="text-xl sm:text-2xl font-semibold mb-4">Order Summary</h2>
           <div className="space-y-2 mb-6">
             <div className="flex justify-between text-sm sm:text-base">
@@ -99,7 +108,8 @@ export default function CartPage() {
               </span>
             </div>
           </div>
-          <div className="flex items-center mb-4">
+
+          {/* <div className="flex items-center mb-4">
             <input
               type="text"
               placeholder="Add promo code"
@@ -108,7 +118,8 @@ export default function CartPage() {
             <button className="bg-black text-white px-4 py-2 rounded-r">
               Apply
             </button>
-          </div>
+          </div> */}
+          
           <Link href="/checkout">
             <button className="w-full bg-black text-white py-3 rounded hover:bg-gray-800">
               Go to Checkout →
