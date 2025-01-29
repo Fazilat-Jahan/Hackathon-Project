@@ -63,7 +63,7 @@ export default function ProductCard() {
   }
 
   return (
-    <div className="md:py-20 py-10">
+    <div className="md:py-20 py-16">
 
 <div className="flex flex-col md:flex-row md:justify-between items-center md:items-start md:px-4 px-2 mb-4 gap-4">
   <div className="w-full md:w-auto text-center md:text-left">

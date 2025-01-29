@@ -26,9 +26,9 @@ const HeroSection = async () => {
   ];
 
   return (
-    <div className='py-6 overflow-hidden '>
-      <section className='md:relative md:w-full w-full md:h-[663px] h-[853px] '>
-        <div className='md:absolute inset-0 flex flex-col justify-start md:px-24 px-4 md:py-14 pt-12 z-10'>
+    <div className='py-6'>
+      <section className='md:relative w-full md:h-[663px] h-[853px] pb-10'>
+        <div className='md:absolute inset-0 flex flex-col justify-start md:px-24 px-4 md:py-24 pt-12  z-10'>
           <h1 className='font-integral md:text-5xl text-4xl font-bold leading-none'>
             FIND CLOTHES<br />
             THAT MATCHES<br />
