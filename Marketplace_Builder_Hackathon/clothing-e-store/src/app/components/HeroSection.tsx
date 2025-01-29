@@ -27,7 +27,7 @@ const HeroSection = async () => {
 
   return (
     <div className='py-6'>
-      <section className='md:relative w-full md:h-[663px] h-[853px] pb-10'>
+      <section className='md:relative w-full md:h-[663px] h-[853px]'>
         <div className='md:absolute inset-0 flex flex-col justify-start md:px-24 px-4 md:py-24 pt-12  z-10'>
           <h1 className='font-integral md:text-5xl text-4xl font-bold leading-none'>
             FIND CLOTHES<br />
@@ -97,7 +97,7 @@ const HeroSection = async () => {
 
 
         {/* Footer */}
-        <div className="bg-black md:h-[122px] h-[146px] w-full text-white flex items-center justify-center">
+        <div className="bg-black md:h-[122px] h-[146px] w-full text-white flex items-center justify-center overflow-hidden">
           <div className="flex flex-wrap justify-center items-center md:px-12 w-full">
             {brandlogos.map((logo, index) => (
               <div className="w-1/3 md:w-1/5 p-4" key={index}>
